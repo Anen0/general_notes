@@ -63,6 +63,29 @@ usermod -aG sudo username
 
 
 
+Identify the architecture of linux OS
+--------------------------------------------------------------------------------------------------------------------
+src: https://unix.stackexchange.com/questions/12453/how-to-determine-linux-kernel-architecture
+
+dpkg --print-architecture
+
+
+How do I see what packages are installed on Ubuntu Linux?
+--------------------------------------------------------------------------------------------------------------------
+src: https://www.cyberciti.biz/faq/apt-get-list-packages-are-installed-on-ubuntu-linux/
+
+In terminal:
+apt list --installed
+
+To display a list of packages satisfying certain criteria such as show matching apache2 packages:
+apt list apache2
+
+Want to get a list of all upgradeable packages? Try:
+apt list --upgradeable
+
+
+check if a package is installed or not:
+apt list -a "pkgNameHere"
 
 
 
