@@ -1,0 +1,22 @@
+UBUNTU Checklist in VM
+
+mount shared folder to VM
+------------------------------------------------
+Start your VM
+Devices > Insert Guest Additions CD image...
+I had to manually mount the CD: sudo mount /dev/cdrom /media/cdrom
+Install the necessary packages: sudo apt-get install make gcc linux-headers-$(uname -r)
+Install the Guest Additions: sudo /media/cdrom/VBoxLinuxAdditions.run
+
+
+Remote accesss on Ubuntu 20.04---------------------------------
+https://dev.to/rakeshgsekhar/how-to-allow-remote-connections-to-mysql-database-on-ubuntu-20-04-4nc2
+
+mysql --help | grep "Default options" -A 1
+/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf 
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo systemctl restart mysql
+sudo service mysql status
+
+
