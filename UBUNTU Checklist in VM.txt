@@ -87,7 +87,99 @@ apt list --upgradeable
 check if a package is installed or not:
 apt list -a "pkgNameHere"
 
+Install from a specific directory:
+sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installation directory.
 
 
 
+LAMP set up
+--------------------------------------------------------------------------------------------------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
+
+
+
+
+MYSQL 
+--------------------------------------------------------------------------------------------------------------------
+src: https://www.rosehosting.com/blog/how-to-list-all-databases-in-mysql/
+login
+sudo mysql
+
+
+
+Add user w/ permissions
+src: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+running with no authentication plugin
+	CREATE USER 'username'@'host' IDENTIFIED BY 'password'; 
+
+Note: There is a known issue with some versions of PHP that causes problems with caching_sha2_password. If you plan to use this database with a PHP application — phpMyAdmin, for example — you may want to create a user that will authenticate with the older, though still secure, mysql_native_password plugin instead:
+	CREATE USER 'sammy'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+
+If you got issuies with caching_sha2_password and use the db with a php application say PHPMYADMIN, use: mysql_native_password
+	CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+If you aren’t sure, you can always create a user that authenticates with caching_sha2_plugin and then ALTER it later on with this command:
+	ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+grant permissions
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+
+
+
+
+list users
+select * from mysql.user;
+or
+select host, user from mysql.user;
+
+reduce the amount of ‘user’ information shown
+desc mysql.user;
+
+connect to mysql server with password
+	mysql -u root -p
+
+	w/o password
+	mysql -u root
+
+
+show a list of databases
+show databases;
+
+
+select a database
+use "nameOfDB";
+
+
+show list of in the database
+show tables;
+
+
+STOPPING MYSQL service
+--------------------------------------------------------------------------------------------------------------------
+src: https://linuxhint.com/change-mysql-root-password-ubuntu/
+
+stop mysql:
+	sudo systemctl stop mysql.service
+
+check if it has been stopped:
+	sudo systemctl status mysql.service
+
+start mysql w/o granting the tables and networking check, set the environment variable “MYSQLD_OPTS” which MySQL uses on startup:
+	sudo systemctl set-environment MYSQLD_OPTS="--skip-networking --skip-grant-tables"
+
+
+
+Change password policy
+--------------------------------------------------------------------------------------------------------------------
+src: https://tecadmin.net/change-mysql-password-policy-level/
+
+Login to MySQL command prompt and execute the below:
+	SHOW VARIABLES LIKE 'validate_password%';
+
+The default level is MEDIUM, we can change it to LOW by using the below query. The LOW level required only password’s length to min 8 characters:
+	SET GLOBAL validate_password.policy=LOW;
+
+To make this setting permanent edit MySQL configuration (my.cnf) file and add below settings.
+[mysqld]
+validate_password.policy=LOW
 
