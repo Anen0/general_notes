@@ -183,3 +183,12 @@ To make this setting permanent edit MySQL configuration (my.cnf) file and add be
 [mysqld]
 validate_password.policy=LOW
 
+
+
+SSH server
+--------------------------------------------------------------------------------------------------------------------
+src: https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
+
+
+
+
