@@ -3,6 +3,8 @@ UBUNTU Checklist in VM
 INSTALL PHPMYADMIN
 --------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
+additional info
+https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
 
 
 
