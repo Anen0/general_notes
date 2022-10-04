@@ -254,4 +254,22 @@ src: https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
 
 
 
+VSCODE TYPING SLOW IN UBUNTU
+--------------------------------------------------------------------------------------------------------------------
+src: https://askubuntu.com/questions/1051621/why-does-visual-studio-code-work-slow-in-ubuntu
+
+open VSCODE
+File > Preferences > Settings
+search in terminal:
+	Terminal > Integrated> gpu acceleration 
+	change Auto to Off
+
+
+
+REQUIREMENT.TXT - packages having issues in Ubuntu with pip3 install
+--------------------------------------------------------------------------------------------------------------------
+flask-mysqldb 
+	work sround:
+		sudo apt-get install libmysqlclient-dev
+
 
