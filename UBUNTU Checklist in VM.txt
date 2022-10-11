@@ -8,6 +8,12 @@ https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
 
 
 
+LAMP set up
+--------------------------------------------------------------------------------------------------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
+
+
+
 mount shared folder to VM
 --------------------------------------------------------------------------------------------------------------------
 src: https://askubuntu.com/questions/456400/why-cant-i-access-a-shared-folder-from-within-my-virtualbox-machine
@@ -97,13 +103,6 @@ apt list -a "pkgNameHere"
 
 Install from a specific directory:
 sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installation directory.
-
-
-
-LAMP set up
---------------------------------------------------------------------------------------------------------------------
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
-
 
 
 
@@ -244,13 +243,18 @@ The default level is MEDIUM, we can change it to LOW by using the below query. T
 
 To make this setting permanent edit MySQL configuration (my.cnf) file and add below settings.
 [mysqld]
-validate_password.policy=LOW
+validate_password.policy=LOW    (change to lesser password authentication)
+sql_mode=  						(disables strict mode in mysql, if shows "nonaggregated columns" in the error) more info: https://dba.stackexchange.com/questions/237048/1055-expression-1-of-select-list-is-not-in-group-by-clause-and-contains-nonag
+
 
 
 
 SSH server
 --------------------------------------------------------------------------------------------------------------------
 src: https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
+
+set up
+https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04
 
 
 
@@ -273,3 +277,8 @@ flask-mysqldb
 		sudo apt-get install libmysqlclient-dev
 
 
+
+Deploying Flask Application on VPS Linux Server using Nginx
+--------------------------------------------------------------------------------------------------------------------
+https://medium.com/geekculture/deploying-flask-application-on-vps-linux-server-using-nginx-a1c4f8ff0010
+gunicorn --bind 0.0.0.0:5000 wsgi:app
