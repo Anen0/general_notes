@@ -5,7 +5,8 @@ INSTALL PHPMYADMIN
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
 additional info
 https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
-
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04#step-4-%E2%80%94-configuring-nginx-to-use-the-php-processor
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-nginx-on-an-ubuntu-20-04-server
 
 
 LAMP set up
@@ -282,3 +283,12 @@ Deploying Flask Application on VPS Linux Server using Nginx
 --------------------------------------------------------------------------------------------------------------------
 https://medium.com/geekculture/deploying-flask-application-on-vps-linux-server-using-nginx-a1c4f8ff0010
 gunicorn --bind 0.0.0.0:5000 wsgi:app
+https://www.codewithharry.com/blogpost/flask-app-deploy-using-gunicorn-nginx/
+
+
+Add desktop environment for ubuntu server
+https://www.makeuseof.com/install-desktop-environment-gui-ubuntu-server/
+
+
+Deploy Flask App on VPS
+https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps
