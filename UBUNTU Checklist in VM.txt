@@ -5,7 +5,7 @@ INSTALL PHPMYADMIN
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
 additional info
 https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
-https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04#step-4-%E2%80%94-configuring-nginx-to-use-the-php-processor
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-nginx-on-an-ubuntu-20-04-server
 
 
@@ -291,4 +291,16 @@ https://www.makeuseof.com/install-desktop-environment-gui-ubuntu-server/
 
 
 Deploy Flask App on VPS
-https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps
+https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps - apache
+
+
+
+ubuntu shared folder not showing up:
+- attach shared folder in vbox
+- run guest addition again
+- run this on terminal:
+	sudo apt-get update
+	sudo apt-get install -y build-essential linux-headers-$(uname -r)
+	sudo apt-get install virtualbox-guest-utils
+	sudo adduser $(whoami) vboxsf
+-restart guest for it to take effect
