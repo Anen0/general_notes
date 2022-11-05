@@ -99,8 +99,14 @@ Want to get a list of all upgradeable packages? Try:
 apt list --upgradeable
 
 
-check if a package is installed or not:
-apt list -a "pkgNameHere"
+https://www.hostinger.ph/tutorials/how-to-list-installed-packages-on-ubuntu/
+To search for any specific package:
+sudo apt list –-installed | grep (PackageName)
+	to view more information about a specific package, use the following command:
+	sudo apt packageName
+
+
+
 
 Install from a specific directory:
 sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installation directory.
@@ -239,14 +245,22 @@ src: https://tecadmin.net/change-mysql-password-policy-level/
 Login to MySQL command prompt and execute the below:
 	SHOW VARIABLES LIKE 'validate_password%';
 
+
 The default level is MEDIUM, we can change it to LOW by using the below query. The LOW level required only password’s length to min 8 characters:
 	SET GLOBAL validate_password.policy=LOW;
 
-To make this setting permanent edit MySQL configuration (my.cnf) file and add below settings.
+To make this setting permanent edit MySQL configuration (my.cnf) file and add below settings
+sudo nano /etc/mysql/my.cnf
+
 [mysqld]
 validate_password.policy=LOW    (change to lesser password authentication)
 sql_mode=  						(disables strict mode in mysql, if shows "nonaggregated columns" in the error) more info: https://dba.stackexchange.com/questions/237048/1055-expression-1-of-select-list-is-not-in-group-by-clause-and-contains-nonag
 
+its default value = ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+
+OR login mysql
+mysql> set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+mysql> set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 
 
@@ -292,10 +306,17 @@ https://www.makeuseof.com/install-desktop-environment-gui-ubuntu-server/
 
 Deploy Flask App on VPS
 https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps - apache
+sudo apt install apache2
+sudo apt install libapache2-mod-wsgi-py3
+
+vid
+https://www.youtube.com/watch?v=XeVWtpJHZAU&ab_channel=JayHoward
+
 
 
 
 ubuntu shared folder not showing up:
+--------------------------------------------------------------------------------------------------------------------
 - attach shared folder in vbox
 - run guest addition again
 - run this on terminal:
@@ -304,3 +325,9 @@ ubuntu shared folder not showing up:
 	sudo apt-get install virtualbox-guest-utils
 	sudo adduser $(whoami) vboxsf
 -restart guest for it to take effect
+
+
+--------------------------------------------------------------------------------------------------------------------
+Create a symbolic link to another folder:
+sudo ln -s /usr/share/phpmyadmin /var/www/your_domain/phpmyadmin
+sudo ln -s 1st_location 2nd_location

@@ -218,3 +218,48 @@ pip install -Iv (i.e. pip install -Iv MySQL_python==1.2.2)
 
 
 ------------------------------------------------------------------------------------------------------------
+INSTALL PIPENV (in ubuntu)
+
+sudo -H pip install -U pipenv
+
+  Activate
+    pipenv shell
+
+  Exiting the virtualenv
+    exit
+
+  Install package
+    pipenv install 'packagename'
+
+  Run with pipenv
+    pipenv run *  
+
+  Install in dev-packages(packages only meant for development not in production)
+    pipenv install 'packagename' --dev
+
+  Install from requirements.txt
+    pipenv install -r ./requirements.txt
+
+  Check local packages
+    pipenv lock -r
+
+  Check security vulnerabilities
+    pipenv check
+  
+  Check dependency graph
+    pipenv graph
+  
+  Ignore pipfile
+    pipenv install --ignore-pipfile
+  
+  Set lockfile - before deployment
+    pipenv lock
+
+  View virtual env. location
+    pipenv --venv
+
+  View project home directory
+    pipenv --where
+
+  
+
