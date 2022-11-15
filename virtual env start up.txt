@@ -45,6 +45,53 @@ deactivate: exit
 //pipenv docs 
 https://docs.python-guide.org/dev/virtualenvs/
 
+------------------------------------------------------------------------------------------------------------
+INSTALL PIPENV (in ubuntu)
+
+sudo -H pip install -U pipenv
+
+  Activate
+    pipenv shell
+
+  Exiting the virtualenv
+    exit
+
+  Install package
+    pipenv install 'packagename'
+
+  Run with pipenv
+    pipenv run *  
+
+  Install in dev-packages(packages only meant for development not in production)
+    pipenv install 'packagename' --dev
+
+  Install from Pipfile
+    pipenv install
+
+  Install from requirements.txt
+    pipenv install -r ./requirements.txt
+
+  Check security vulnerabilities
+    pipenv check
+  
+  Check dependency graph
+    pipenv graph
+  
+  Ignore pipfile
+    pipenv install --ignore-pipfile
+  
+  Set lockfile - before deployment
+    pipenv lock
+
+  View virtual env. location
+    pipenv --venv
+
+  View project home directory
+    pipenv --where
+
+
+
+
 --------------------------------------------------------------------------------------------------------------------------
 
 # make requirements: 
@@ -216,50 +263,4 @@ pip install -Iv (i.e. pip install -Iv MySQL_python==1.2.2)
 -I stands for --ignore-installed which will ignore the installed packages, overwriting them.
 -v is for verbose. You can combine for even more verbosity (i.e. -vv) up to 3 times (e.g. -Ivvv).
 
-
-------------------------------------------------------------------------------------------------------------
-INSTALL PIPENV (in ubuntu)
-
-sudo -H pip install -U pipenv
-
-  Activate
-    pipenv shell
-
-  Exiting the virtualenv
-    exit
-
-  Install package
-    pipenv install 'packagename'
-
-  Run with pipenv
-    pipenv run *  
-
-  Install in dev-packages(packages only meant for development not in production)
-    pipenv install 'packagename' --dev
-
-  Install from requirements.txt
-    pipenv install -r ./requirements.txt
-
-  Check local packages
-    pipenv lock -r
-
-  Check security vulnerabilities
-    pipenv check
-  
-  Check dependency graph
-    pipenv graph
-  
-  Ignore pipfile
-    pipenv install --ignore-pipfile
-  
-  Set lockfile - before deployment
-    pipenv lock
-
-  View virtual env. location
-    pipenv --venv
-
-  View project home directory
-    pipenv --where
-
-  
 

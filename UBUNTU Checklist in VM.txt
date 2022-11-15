@@ -112,6 +112,11 @@ Install from a specific directory:
 sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installation directory.
 
 
+UBUNTU Add permission to folder
+--------------------------------------------------------------------------------------------------------------------
+sudo chown -R $USER:$USER /var/ww/w/
+sudo chown -R <current user> <directory>
+
 
 MYSQL 
 --------------------------------------------------------------------------------------------------------------------
@@ -309,9 +314,17 @@ https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps - apache
 sudo apt install apache2
 sudo apt install libapache2-mod-wsgi-py3
 
+
+Deploy with APACHE
 vid
 https://www.youtube.com/watch?v=XeVWtpJHZAU&ab_channel=JayHoward
 
+another vid 
+https://www.youtube.com/watch?v=w0QDAg85Oow&ab_channel=LukePeters
+
+
+Deploy in Nginx
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04
 
 
 
@@ -331,3 +344,16 @@ ubuntu shared folder not showing up:
 Create a symbolic link to another folder:
 sudo ln -s /usr/share/phpmyadmin /var/www/your_domain/phpmyadmin
 sudo ln -s 1st_location 2nd_location
+
+UNLINK the file from the /sites-enabled/ directory:
+sudo unlink /etc/nginx/sites-enabled/default
+
+
+------------------------------------------------------------------------------------------------------------
+NETSTAT commands
+	show active connections:
+	sudo netstat -tulpn
+
+https://www.tecmint.com/20-netstat-commands-for-linux-network-management/
+https://www.geeksforgeeks.org/netstat-command-linux/
+
