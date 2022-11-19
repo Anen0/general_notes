@@ -1,7 +1,7 @@
 UBUNTU Checklist in VM
 
 INSTALL PHPMYADMIN
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
 additional info
 https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
@@ -10,13 +10,13 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmy
 
 
 LAMP set up
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
 
 
 
 mount shared folder to VM
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://askubuntu.com/questions/456400/why-cant-i-access-a-shared-folder-from-within-my-virtualbox-machine
 
 1) Highlight the VM, go to Settings > Shared Folders and add folder.
@@ -28,7 +28,7 @@ src: https://askubuntu.com/questions/456400/why-cant-i-access-a-shared-folder-fr
 
 
 REMOTE ACCESSS ON Ubuntu 20.04
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://dev.to/rakeshgsekhar/how-to-allow-remote-connections-to-mysql-database-on-ubuntu-20-04-4nc2
 
 mysql --help | grep "Default options" -A 1
@@ -41,7 +41,7 @@ sudo service mysql status
 
 
 LIST USERS IN UBUNTU
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also-to-add-delete-modify-users-in-the
 
 To list all local users you can use:
@@ -79,14 +79,14 @@ usermod -aG sudo username
 
 
 Identify the architecture of linux OS
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://unix.stackexchange.com/questions/12453/how-to-determine-linux-kernel-architecture
 
 dpkg --print-architecture
 
 
 How do I see what packages are installed on Ubuntu Linux?
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://www.cyberciti.biz/faq/apt-get-list-packages-are-installed-on-ubuntu-linux/
 
 In terminal:
@@ -113,13 +113,13 @@ sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installati
 
 
 UBUNTU Add permission to folder
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo chown -R $USER:$USER /var/ww/w/
 sudo chown -R <current user> <directory>
 
 
 MYSQL 
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://www.rosehosting.com/blog/how-to-list-all-databases-in-mysql/
 login
 sudo mysql
@@ -229,7 +229,7 @@ show tables;
 
 
 STOPPING MYSQL service
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://linuxhint.com/change-mysql-root-password-ubuntu/
 
 stop mysql:
@@ -244,7 +244,7 @@ start mysql w/o granting the tables and networking check, set the environment va
 
 
 Change password policy
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://tecadmin.net/change-mysql-password-policy-level/
 
 Login to MySQL command prompt and execute the below:
@@ -270,7 +270,7 @@ mysql> set session sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ER
 
 
 SSH server
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/
 
 set up
@@ -279,7 +279,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubunt
 
 
 VSCODE TYPING SLOW IN UBUNTU
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://askubuntu.com/questions/1051621/why-does-visual-studio-code-work-slow-in-ubuntu
 
 open VSCODE
@@ -291,7 +291,7 @@ search in terminal:
 
 
 REQUIREMENT.TXT - packages having issues in Ubuntu with pip3 install
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 flask-mysqldb 
 	work sround:
 		sudo apt-get install libmysqlclient-dev
@@ -299,7 +299,7 @@ flask-mysqldb
 
 
 Deploying Flask Application on VPS Linux Server using Nginx
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://medium.com/geekculture/deploying-flask-application-on-vps-linux-server-using-nginx-a1c4f8ff0010
 gunicorn --bind 0.0.0.0:5000 wsgi:app
 https://www.codewithharry.com/blogpost/flask-app-deploy-using-gunicorn-nginx/
@@ -329,7 +329,7 @@ https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications
 
 
 ubuntu shared folder not showing up:
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 - attach shared folder in vbox
 - run guest addition again
 - run this on terminal:
@@ -340,7 +340,7 @@ ubuntu shared folder not showing up:
 -restart guest for it to take effect
 
 
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Create a symbolic link to another folder:
 sudo ln -s /usr/share/phpmyadmin /var/www/your_domain/phpmyadmin
 sudo ln -s 1st_location 2nd_location
@@ -349,7 +349,7 @@ UNLINK the file from the /sites-enabled/ directory:
 sudo unlink /etc/nginx/sites-enabled/default
 
 
-------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 NETSTAT commands
 	show active connections:
 	sudo netstat -tulpn
