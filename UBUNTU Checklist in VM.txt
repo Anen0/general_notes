@@ -296,6 +296,10 @@ flask-mysqldb
 	work sround:
 		sudo apt-get install libmysqlclient-dev
 
+	on windows:
+		install it by binary:
+		pip install --only-binary :all: mysqlclient
+
 
 
 DEPLOYING Flask Application on VPS Linux Server using Nginx
@@ -330,57 +334,57 @@ https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications
 Vid - Python Flask Tutorial: Deploying Your Application (Option #1) - Deploy to a Linux Server
 https://www.youtube.com/watch?v=goToXTC96Co&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=13&ab_channel=CoreySchafer
 
-29:41 - `pip freeze > requirements.txt` ========================> and move the text into Flask_Blog folder
-30:35 - `scp -r Desktop/Flask_Blog coreyms@45.33.123.214:~/` ===> where we copy Flask_Blog from personal machine to Linode (or any vps)
-31:50 - `sudo apt install python3-pip` 
-32:12 - `sudo apt install python3-venv`
-32:44 - `python3 -m venv Flask_Blog/venv`
-33:19 - `source venv/bin/activate` 	=====================================> in our Flask_Blog dir we activate our venv
-33:50 - `pip install -r requirements.txt` ===============================> we install our pip packages into our venv
-37:40 - `sudo touch /etc/config.json` & `sudo nano /etc/config.json` ====> where we now store our environment variables inside a file instead of the system 
-40:22 - `sudo nano flaskblog/config.py` ===> add the following code 
-		`import json`
-		`with open('/etc/config.json') as config_file:
-		config = json.load(config_file)`
-41:50 - we are still in config.py and replace `os.environ.get` with `config.get`
-43:35 - `export FLASK_APP=run.py` - where we assign the environment variable FLASK_APP to the module
-43:55 - `flask run --host=0.0.0.0` -  we run a local dev server on the linode
-48:26 - `sudo apt install nginx`
-48:53 - `pip install gunicorn`
-50:02 - `sudo rm /etc/nginx/sites-enabled/default` - we remove nginx default config
-50:20 - `sudo nano /etc/nginx/sites-enabled/flaskblog` -  new nginx config solely for our app. Add the code from Corey's snippets. Remember: gunicorn is running on port 8000, nginx is running on port 80
-54:27 - `sudo nano ufw allow http/tcp` &
-		`sudo ufw delete allow 5000` &
-		`sudo ufw enable` 
-55:00 - `sudo systemctl restart nginx` - restart nginx server
-56:25 - access your URL/static/main.css. This proves that nginx server is serving static content and that it cannot serve the dynamic content because Gunicorn is not running yet.
-58:02 - `nproc --all` - to find out how many cores on this machine
-58:35 - `gunicorn -w 3 run:app` - now that gunicorn is running, we access our main site and this proves that nginx is passing HTTP requests to gunicorn
-1:00:23 - `sudo apt install supervisor` - this software (written in python!) will run Gunicorn in the background
-1:00:50 - `sudo nano /etc/supervisor/conf.d/flaskblog.conf` - create a supervisor config file referring to flaskblog package, and Gunicorn. Add corey's snippets
-1:04:10 - note that we point supervisor to (yet uncreated) log files located:
-		  `/var/log/flaskblog/flaskblog.err.log` &
-		  `/var/log/flaskblog/flaskblog.out.log`
-1:05:03 - `sudo mkdir -p /var/log/flaskblog` 
-1:05:22 - `sudo touch /var/log/flaskblog/flaskblog.err.log` &
-		  `sudo touch /var/log/flaskblog/flaskblog.out.log` - where we now create our log files
-1:05:42 - `sudo supervisorctl reload` - where we restart supervisor
-1:07:40 - `sudo nano /etc/nginx/nginx.conf` - where we access general config file for nginx
-1:07:54 - `client_max_body_size 5M;` - add this code in the config file to increase upload limit from 2MB to 5MB
-1:08:30 - `sudo systemctl restart nginx`
+	29:41 - `pip freeze > requirements.txt` ========================> and move the text into Flask_Blog folder
+	30:35 - `scp -r Desktop/Flask_Blog coreyms@45.33.123.214:~/` ===> where we copy Flask_Blog from personal machine to Linode (or any vps)
+	31:50 - `sudo apt install python3-pip` 
+	32:12 - `sudo apt install python3-venv`
+	32:44 - `python3 -m venv Flask_Blog/venv`
+	33:19 - `source venv/bin/activate` 	=====================================> in our Flask_Blog dir we activate our venv
+	33:50 - `pip install -r requirements.txt` ===============================> we install our pip packages into our venv
+	37:40 - `sudo touch /etc/config.json` & `sudo nano /etc/config.json` ====> where we now store our environment variables inside a file instead of the system 
+	40:22 - `sudo nano flaskblog/config.py` ===> add the following code 
+			`import json`
+			`with open('/etc/config.json') as config_file:
+			config = json.load(config_file)`
+	41:50 - we are still in config.py and replace `os.environ.get` with `config.get`
+	43:35 - `export FLASK_APP=run.py` - where we assign the environment variable FLASK_APP to the module
+	43:55 - `flask run --host=0.0.0.0` -  we run a local dev server on the linode
+	48:26 - `sudo apt install nginx`
+	48:53 - `pip install gunicorn`
+	50:02 - `sudo rm /etc/nginx/sites-enabled/default` - we remove nginx default config
+	50:20 - `sudo nano /etc/nginx/sites-enabled/flaskblog` -  new nginx config solely for our app. Add the code from Corey's snippets. Remember: gunicorn is running on port 8000, nginx is running on port 80
+	54:27 - `sudo nano ufw allow http/tcp` &
+			`sudo ufw delete allow 5000` &
+			`sudo ufw enable` 
+	55:00 - `sudo systemctl restart nginx` - restart nginx server
+	56:25 - access your URL/static/main.css. This proves that nginx server is serving static content and that it cannot serve the dynamic content because Gunicorn is not running yet.
+	58:02 - `nproc --all` - to find out how many cores on this machine
+	58:35 - `gunicorn -w 3 run:app` - now that gunicorn is running, we access our main site and this proves that nginx is passing HTTP requests to gunicorn
+	1:00:23 - `sudo apt install supervisor` - this software (written in python!) will run Gunicorn in the background
+	1:00:50 - `sudo nano /etc/supervisor/conf.d/flaskblog.conf` - create a supervisor config file referring to flaskblog package, and Gunicorn. Add corey's snippets
+	1:04:10 - note that we point supervisor to (yet uncreated) log files located:
+			`/var/log/flaskblog/flaskblog.err.log` &
+			`/var/log/flaskblog/flaskblog.out.log`
+	1:05:03 - `sudo mkdir -p /var/log/flaskblog` 
+	1:05:22 - `sudo touch /var/log/flaskblog/flaskblog.err.log` &
+			`sudo touch /var/log/flaskblog/flaskblog.out.log` - where we now create our log files
+	1:05:42 - `sudo supervisorctl reload` - where we restart supervisor
+	1:07:40 - `sudo nano /etc/nginx/nginx.conf` - where we access general config file for nginx
+	1:07:54 - `client_max_body_size 5M;` - add this code in the config file to increase upload limit from 2MB to 5MB
+	1:08:30 - `sudo systemctl restart nginx`
 
 
-	.conf file content
-	[program:chatup]
-	directory=/home/kuryu-chan/Documents/chat_app_linux
-	command=/home/kuryu-chan/.local/share/virtualenvs/chat_app_linux-SqBQMYEI/bin/gunicorn -w 17 wsgi:app
-	user=kuryu-chan
-	autostart=true
-	autorestart=true
-	stopasgroup=true
-	killasgroup=true
-	stderr_logfile=/var/log/chat_up/chat_up.err.log
-	stdout_logfile=/var/log/chat_up/chat_up.out.log
+		.conf file content
+		[program:chatup]
+		directory=/home/kuryu-chan/Documents/chat_app_linux
+		command=/home/kuryu-chan/.local/share/virtualenvs/chat_app_linux-SqBQMYEI/bin/gunicorn -w 17 wsgi:app
+		user=kuryu-chan
+		autostart=true
+		autorestart=true
+		stopasgroup=true
+		killasgroup=true
+		stderr_logfile=/var/log/chat_up/chat_up.err.log
+		stdout_logfile=/var/log/chat_up/chat_up.out.log
 
 
 
