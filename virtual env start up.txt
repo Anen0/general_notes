@@ -71,6 +71,9 @@ sudo -H pip install -U pipenv
   Install from requirements.txt
     pipenv install -r ./requirements.txt
 
+  generate req txt
+    pipenv run pip freeze > requirements.txt
+
   Check security vulnerabilities
     pipenv check
   

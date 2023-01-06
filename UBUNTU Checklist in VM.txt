@@ -75,7 +75,8 @@ adduser username sudo
 or
 usermod -aG sudo username
 
-
+rename a directory:
+mv /home/user/oldname /home/user/newname
 
 
 Identify the architecture of linux OS
