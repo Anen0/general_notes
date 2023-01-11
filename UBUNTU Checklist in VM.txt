@@ -119,10 +119,12 @@ Install from a specific directory:
 sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installation directory.
 
 
-UBUNTU Add permission to folder
+UBUNTU Add permission to folder CHMOD
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo chown -R $USER:$USER /var/ww/w/
 sudo chown -R <current user> <directory>
+	more info
+		https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/
 
 
 MYSQL 
