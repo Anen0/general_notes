@@ -106,6 +106,12 @@ sudo apt list –-installed | grep (PackageName)
 	to view more information about a specific package, use the following command:
 	sudo apt packageName
 
+Uninstall a package (in DEBIAN) : https://geniusgeeks.com/uninstall-debian-package/cr
+	sudo apt-get –purge remove 'package-name' 
+
+Uninstall a package (in UBUNTU) : https://phoenixnap.com/kb/uninstall-packages-programs-ubuntu
+	sudo apt remove 'package-name'
+
 
 
 
@@ -453,3 +459,6 @@ def random_string(length):
     return ''.join(random.choice(pool) for i in xrange(length))
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
