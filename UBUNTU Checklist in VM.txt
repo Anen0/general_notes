@@ -5,13 +5,36 @@ INSTALL PHPMYADMIN
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
 additional info
 https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
+
+LEMP setup
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-20-04
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-nginx-on-an-ubuntu-20-04-server
-
+	short rundown
+	- Install nginx
+	- install and setup mysql
+	- install php package
+		sudo apt install php-fpm php-mysql
 
 LAMP set up
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
+
+
+MYSQL-SERVER debugging installation
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- if Error displays 'mysql-server has no installation candidate'
+	- you need to download the installation file (.deb) from the web:
+		source: 
+			https://dev.mysql.com/downloads/repo/apt/
+		or in terminal
+			wget https://repo.mysql.com//mysql-apt-config_0.8.22-1_all.deb - downloads the file
+			sudo dpkg -i mysql-apt-config_*********.deb				- installs the file
+
+		sudo apt update
+		sudo apt install mysql-server
+
+
 
 
 
@@ -317,10 +340,18 @@ flask-mysqldb
 
 
 
+
+
 DEPLOYING Flask Application on VPS Linux Server using Nginx
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://medium.com/geekculture/deploying-flask-application-on-vps-linux-server-using-nginx-a1c4f8ff0010
-gunicorn --bind 0.0.0.0:5000 wsgi:app
+gunicorn -w 3 --bind 0.0.0.0:5000 wsgi:app
+
+	the number of workers:
+		= 1 cpu x 2 + 1 
+		= to know the number of cores a pc has in linux/debian
+			nproc --all
+
 https://www.codewithharry.com/blogpost/flask-app-deploy-using-gunicorn-nginx/
 
 
