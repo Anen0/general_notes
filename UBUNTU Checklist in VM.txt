@@ -493,5 +493,21 @@ def random_string(length):
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Flask ajax datatables not working
+
+when url links have '  url: /link/value?_=000000000000  ' 
+this is due to ajax cache, set cache to false
+	cache: false
+
+https://datatables.net/forums/discussion/45935/jquery-ajax-in-flask-not-working
 
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLASK: creating database in app context
+https://flask-sqlalchemy.palletsprojects.com/en/2.x/contexts/
+
+Some functions inside Flask-SQLAlchemy also accept optionally the application to operate on:
+
+>>> from yourapp import db, create_app
+>>> db.create_all(app=create_app())
