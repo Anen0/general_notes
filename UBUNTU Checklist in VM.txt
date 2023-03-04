@@ -530,7 +530,9 @@ REDIS server
 
 
 -------------------------------------------------------------------------------------------------------------------------
-INSTALL CURL
+INSTALL CURL - cant install curl?
+https://stackoverflow.com/questions/22754649/cant-install-pycurl-with-pip
+
 This is a problem indeed. No need to update pip or easy install as it's often advised, 
 well it won't hurt to update but you will still have the problem until you :
 
