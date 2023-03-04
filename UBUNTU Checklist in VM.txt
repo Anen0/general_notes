@@ -511,3 +511,32 @@ Some functions inside Flask-SQLAlchemy also accept optionally the application to
 
 >>> from yourapp import db, create_app
 >>> db.create_all(app=create_app())
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+REDIS server
+
+	Install on Ubuntu/Debian
+		>	curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+		>	echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+
+		>	sudo apt-get update
+		>	sudo apt-get install redis
+
+	Start redis-server
+		if yur having trouble starting:
+			https://stackoverflow.com/questions/42857551/could-not-connect-to-redis-at-127-0-0-16379-connection-refused-with-homebrew
+
+
+-------------------------------------------------------------------------------------------------------------------------
+INSTALL CURL
+This is a problem indeed. No need to update pip or easy install as it's often advised, 
+well it won't hurt to update but you will still have the problem until you :
+
+install libcurl4-gnutls-dev librtmp-dev packages
+pip install pycurl
+		
+
+
+
