@@ -19,9 +19,12 @@ git pull origin main
 ------------------------------------------------------------------------------------------------------------------------------
 Putting Personal Access Token:
 token: "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"
+		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
 	   "git remote add origin https://Anen0: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@github.com/Anen0/shooter3_UI.git"
 	   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
-	   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 <- 
+	   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
+	   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 < -
+	   
 ------------------------------------------------------------------------------------------------------------------------------
 git config --global user.name 'Nomad'
 git config --global user.email "yur email"
