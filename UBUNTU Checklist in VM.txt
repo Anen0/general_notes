@@ -130,7 +130,7 @@ sudo apt list –-installed | grep (PackageName)
 	sudo apt packageName
 
 Uninstall a package (in DEBIAN) : https://geniusgeeks.com/uninstall-debian-package/cr
-	sudo apt-get –purge remove 'package-name' 
+	sudo apt-get -–purge remove 'package-name' 
 
 Uninstall a package (in UBUNTU) : https://phoenixnap.com/kb/uninstall-packages-programs-ubuntu
 	sudo apt remove 'package-name'
@@ -144,7 +144,7 @@ sudo dpkg -i file.deb --instdir=destdir where destdir is your desired installati
 
 UBUNTU Add permission to folder CHMOD
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sudo chown -R $USER:$USER /var/ww/w/
+sudo chown -R $USER:$USER /var/www/
 sudo chown -R <current user> <directory>
 	more info
 		https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/
@@ -554,4 +554,16 @@ pip install pycurl
 		
 
 
+-------------------------------------------------------------------------------------------------------------------------
+Install Let's Encrypt SSL on Ubuntu with Apache or Nginx
+https://www.vultr.com/docs/setup-letsencrypt-on-linux/
+
+--apache: Use the Apache web server
+--nginx: Use the nginx web server
+--redirect: Redirect all HTTP requests to HTTPS.
+-d example.com -d www.example.com: Install a multiple domain (SAN) certificate. You may use up to 100 -d domain entries.
+-m admin@example.com: The notification email address for this certificate.
+--agree-tos: Agree to the terms of service.
+
+certbot --nginx --redirect -d valkyriesecurityinc.com -d www.valkyriesecurityinc.com -m nomad2@ashgard.com.ph --agree-tos
 
