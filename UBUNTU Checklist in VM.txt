@@ -572,3 +572,22 @@ https://www.vultr.com/docs/setup-letsencrypt-on-linux/
 
 certbot --nginx --redirect -d valkyriesecurityinc.com -d www.valkyriesecurityinc.com -m nomad2@ashgard.com.ph --agree-tos
 
+
+-------------------------------------------------------------------------------------------------------------------------
+NGINX: error 403 permission problems
+	Causes:
+	-	User is blocked from requesting that page/resource or the site as a whole.
+	-	User tries to access a directory but `autoindex` is set to `off`.
+	-	User tries to access a file that can be only accessed internally.
+
+
+	To check for ownership and permissions on a path, we can use the namei utility like this -
+	$ namei -om /directory
+
+	sudo chmod -R 755 /directory
+	optional:
+		sudo chmod -R 664 /directory
+	
+	more info: https://stackoverflow.com/questions/6795350/nginx-403-forbidden-for-all-files?noredirect=1&lq=1
+
+
