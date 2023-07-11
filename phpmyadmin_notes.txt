@@ -18,5 +18,19 @@ And Change xampp\php\php.ini to
 And change xampp\mysql\bin\my.ini
     max_allowed_packet = 200M
 
+----------------------------------------
+Upload large SQL to phpmyadmin when its too big via CMD(admin)  (windows)
 
+https://medium.com/@amar.sky9100_12759/2-ways-to-import-large-sql-files-to-mysql-database-ef045e89d82a
+or
+https://www.thecodedeveloper.com/import-large-sql-files-xampp/
 
+1)Go to xampp\mysql\bin
+2)Open CMD with admin rigths
+3)Run the command to import database 
+    mysql -u username -p -v database_name < "/path/file.sql"       // make sure your path should be correct to the.sql file i.e
+
+    Where:
+    username – your MySQL username. e.g. root
+    database_name – database name you are importing to
+    /path/file.sql – full path to your .sql file
