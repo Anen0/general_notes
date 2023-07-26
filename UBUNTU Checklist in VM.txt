@@ -558,6 +558,10 @@ install libcurl4-gnutls-dev librtmp-dev packages
 pip install pycurl
 		
 
+-------------------------------------------------------------------------------------------------------------------------
+CURL Coverter
+https://curlconverter.com/python/
+
 
 -------------------------------------------------------------------------------------------------------------------------
 Install Let's Encrypt SSL on Ubuntu with Apache or Nginx
@@ -590,4 +594,22 @@ NGINX: error 403 permission problems
 	
 	more info: https://stackoverflow.com/questions/6795350/nginx-403-forbidden-for-all-files?noredirect=1&lq=1
 
+
+-------------------------------------------------------------------------------------------------------------------------
+BOOTING PROBLEMS - initramfs
+https://linuxhint.com/fix-initramfs-ubuntu/
+
+1) check the partitions
+	df -h 
+	or
+	blkid
+
+2) file system consistency check - checks filesystem issues & fixes them
+	fsk [partitian name (/dev/sdXX)]
+	ex: 
+		fsk /dev/sdb
+		or
+		fsk /dev/sdb -y (to disable prompts)
+
+3) type reboot, then type exit - ubuntu will restart afterwards
 
