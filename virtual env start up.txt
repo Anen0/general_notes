@@ -108,6 +108,8 @@ pip freeze > requirements.txt
 # install requirements: 
 pip install -r requirements.txt
 
+# list all packages
+pip list
 
 # install using Conda:
 conda create --name <env_name> --file requirements.txt
