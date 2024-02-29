@@ -617,6 +617,9 @@ https://linuxhint.com/fix-initramfs-ubuntu/
 -------------------------------------------------------------------------------------------------------------------------
 UFW - simple firewall
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu
+	check the status of UFW: 
+		sudo ufw status verbose
+
 	enable firewall:
 		sudo ufw enable
 
