@@ -613,3 +613,41 @@ https://linuxhint.com/fix-initramfs-ubuntu/
 
 3) type reboot, then type exit - ubuntu will restart afterwards
 
+
+-------------------------------------------------------------------------------------------------------------------------
+UFW - simple firewall
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu
+	enable firewall:
+		sudo ufw enable
+
+	add applications/ports:	
+		sudo ufw allow (app_name)
+		ex:
+			sudo ufw allow ‘Nginx Full’
+	
+	add specific port ranges:
+		sudo ufw allow (starting port):(ending port)/tcp
+		ex: 
+			sudo ufw allow 6000:6007/tcp
+			sudo ufw allow 6000:6007/udp
+
+	show applications added:
+		sudo ufw app list 
+
+	show ports added:
+		sudo ufw show added
+
+	show ufw status command has an option to display numbers next to each rule:
+		sudo ufw status numbered
+
+	delete rules numbers:
+		sudo ufw delete (number_from_numbered)
+
+	delete rules by name:
+		sudo ufw delete allow "(name_inclosed_in_double_quotes)"
+
+
+	
+
+
+
