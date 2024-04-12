@@ -1,0 +1,16 @@
+Test our REACT elements----------------------------------
+https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=DwCwjAfCCmA2sHsAEB3BAnWATYB6cEQA&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Ctypescript&prettier=true&targets=&version=7.24.4&externalPlugins=&assumptions=%7B%7D 
+
+
+
+INSTALL PACKAGES-----------------------------------------
+npm install   
+or
+npm i
+
+
+
+RUN WEB SERVER-------------------------------------------
+npm run dev
+
+
