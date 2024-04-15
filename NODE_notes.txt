@@ -4,9 +4,9 @@ https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob
 
 
 INSTALL PACKAGES-----------------------------------------
-npm install   
+npm install 
 or
-npm i
+npm i <packagename>@<version>
 
 
 
