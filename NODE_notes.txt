@@ -2,6 +2,9 @@ Test our REACT elements----------------------------------
 https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=DwCwjAfCCmA2sHsAEB3BAnWATYB6cEQA&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Ctypescript&prettier=true&targets=&version=7.24.4&externalPlugins=&assumptions=%7B%7D 
 
 
+MAKE A REACT PROJECT-------------------------------------
+npm create vite@<version>
+
 
 INSTALL PACKAGES-----------------------------------------
 npm install 
@@ -12,5 +15,12 @@ npm i <packagename>@<version>
 
 RUN WEB SERVER-------------------------------------------
 npm run dev
+
+
+ES7+ React/Redux/React-Native snippets-------------------
+- install ES7+ from vscode extensions
+- type "rafce" when making components
+
+
 
 

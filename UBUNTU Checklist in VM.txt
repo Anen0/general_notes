@@ -1,5 +1,7 @@
 UBUNTU Checklist in VM
 
+
+
 INSTALL PHPMYADMIN
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-20-04
@@ -50,6 +52,9 @@ src: https://askubuntu.com/questions/456400/why-cant-i-access-a-shared-folder-fr
 
 
 
+
+
+
 REMOTE ACCESSS ON Ubuntu 20.04
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://dev.to/rakeshgsekhar/how-to-allow-remote-connections-to-mysql-database-on-ubuntu-20-04-4nc2
@@ -63,7 +68,7 @@ sudo service mysql status
 
 
 
-LIST USERS IN UBUNTU
+LIST USERS IN UBUNTU - sudoers list
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also-to-add-delete-modify-users-in-the
 
@@ -96,7 +101,17 @@ sudo chfn username
 To add a user to the sudo group:
 adduser username sudo
 or
-usermod -aG sudo username
+usermod -a -G sudo username
+or
+usermod -a -G wheel user 
+-----------------------------------------if user is still not part of sudoers try:
+	https://stackoverflow.com/questions/47806576/username-is-not-in-the-sudoers-file-this-incident-will-be-reported
+	Open file:
+		sudo su
+		nano /etc/sudoers
+	Then add the user below admin user like below syntax.
+		user_name ALL=(ALL)  ALL
+
 
 rename a directory:
 mv /home/user/oldname /home/user/newname
