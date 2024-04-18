@@ -19,7 +19,7 @@ git pull origin main
 ------------------------------------------------------------------------------------------------------------------------------
 Putting Personal Access Token:
 token: "<token>"
-	   "git remote add origin https://Anen0:<token>@github.com/Anen0/shooter3_UI.git"
+	   "git remote add origin https://<username>:<token>@github.com/<repo>.git"
 	   
 	   
 ------------------------------------------------------------------------------------------------------------------------------
