@@ -1,3 +1,9 @@
+FLASK REACT TUT-----------------------------------------
+https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project
+
+
+
+
 Test our REACT elements----------------------------------
 https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=DwCwjAfCCmA2sHsAEB3BAnWATYB6cEQA&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Ctypescript&prettier=true&targets=&version=7.24.4&externalPlugins=&assumptions=%7B%7D 
 
@@ -22,5 +28,27 @@ ES7+ React/Redux/React-Native snippets-------------------
 - type "rafce" when making components
 
 
+INSTALL NODE JS------------------------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 
+- sudo apt update
+- sudo apt install nodejs
+- sudo apt install npm
 
+    IF using NVM (Node Version Manager)
+    -   install the nvm script throught their github
+            -   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    -   source ~/.bashrc
+    -   choose the version you want
+            -   nvm list-remote
+    -   nvm install <version>
+    -   use the latest available 8.0.x release
+            ex: nvm use 8.0
+
+    -   if already installed you can choose from the installed versions by
+            -   nvm list
+
+removing Node.js
+- sudo apt remove nodejs
+or
+- sudo apt purge nodejs

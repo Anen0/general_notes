@@ -21,9 +21,7 @@ Putting Personal Access Token:
 token: "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"
 		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
 	   "git remote add origin https://Anen0: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@github.com/Anen0/shooter3_UI.git"
-	   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
-	   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
-	   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 < -
+	   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 < - 
 	   
 ------------------------------------------------------------------------------------------------------------------------------
 git config --global user.name 'Nomad'
@@ -151,3 +149,8 @@ If your local branch didn't have any unique commits, git will instead perform a 
 	 README.md                 |    5 +++--
 	 1 file changed, 3 insertions(+), 2 deletions(-)
  
+
+------------------------------------------------------------------------------------------------------------------------------
+Install GIT in Ubuntu
+sudo apt install git-all
+

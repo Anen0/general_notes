@@ -101,7 +101,7 @@ sudo chfn username
 To add a user to the sudo group:
 adduser username sudo
 or
-usermod -a -G sudo username
+usermod -aG sudo username
 or
 usermod -a -G wheel user 
 -----------------------------------------if user is still not part of sudoers try:
@@ -149,6 +149,13 @@ Uninstall a package (in DEBIAN) : https://geniusgeeks.com/uninstall-debian-packa
 
 Uninstall a package (in UBUNTU) : https://phoenixnap.com/kb/uninstall-packages-programs-ubuntu
 	sudo apt remove 'package-name'
+
+
+
+
+REMOVE app/software
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sudo apt-get remove <app_name>
 
 
 
@@ -345,6 +352,8 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubunt
 
 
 
+
+
 VSCODE TYPING SLOW IN UBUNTU
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://askubuntu.com/questions/1051621/why-does-visual-studio-code-work-slow-in-ubuntu
@@ -477,6 +486,8 @@ ubuntu shared folder not showing up:
 -restart guest for it to take effect
 
 
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Create a symbolic link to another folder:
 sudo ln -s /usr/share/phpmyadmin /var/www/your_domain/phpmyadmin
@@ -571,6 +582,12 @@ well it won't hurt to update but you will still have the problem until you :
 
 install libcurl4-gnutls-dev librtmp-dev packages
 pip install pycurl
+
+
+
+basic CURL install
+sudo apt install curl
+curl --version
 		
 
 -------------------------------------------------------------------------------------------------------------------------
