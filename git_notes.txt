@@ -18,9 +18,8 @@ git pull origin main
 
 ------------------------------------------------------------------------------------------------------------------------------
 Putting Personal Access Token:
-token: "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"
-		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
-	   "git remote add origin https://Anen0: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@github.com/Anen0/shooter3_UI.git"
+token: "<token>"
+	   "git remote add origin https://Anen0:<token>@github.com/Anen0/shooter3_UI.git"
 	   
 	   
 ------------------------------------------------------------------------------------------------------------------------------
