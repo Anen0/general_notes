@@ -21,7 +21,7 @@ Putting Personal Access Token:
 token: "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"
 		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
 	   "git remote add origin https://Anen0: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@github.com/Anen0/shooter3_UI.git"
-	   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 < - 
+	   "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___" < - 
 	   
 ------------------------------------------------------------------------------------------------------------------------------
 git config --global user.name 'Nomad'
