@@ -28,7 +28,7 @@ ES7+ React/Redux/React-Native snippets-------------------
 - type "rafce" when making components
 
 
-INSTALL NODE JS------------------------------------------
+INSTALL NODE JS IN UBUNTU--------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 
 - sudo apt update
@@ -52,3 +52,13 @@ removing Node.js
 - sudo apt remove nodejs
 or
 - sudo apt purge nodejs
+
+
+
+==========================================================================
+PACKAGES
+bootstrap
+npm install primereact                  -       https://github.com/primefaces/primereact
+npm i react-data-table-component        -       https://www.npmjs.com/package/react-data-table-component
+
+
