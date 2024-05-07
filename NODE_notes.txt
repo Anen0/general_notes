@@ -18,6 +18,10 @@ or
 npm i <packagename>@<version>
 
 
+UNINSTALL PACKAGES---------------------------------------
+npm uninstall <package_name>
+
+
 
 RUN WEB SERVER-------------------------------------------
 npm run dev
@@ -56,9 +60,25 @@ or
 
 
 ==========================================================================
+Datatables w/ react
+https://www.youtube.com/watch?v=ZCKj0SJRTB8&ab_channel=GaurAssociates
+https://medium.com/@zbzzn/integrating-react-and-datatables-not-as-hard-as-advertised-f3364f395dfa
+
+
+==========================================================================
+Routing
+https://www.youtube.com/watch?v=6kCTFXUEnJ0&ab_channel=StudytonightwithAbhishek
+https://www.geeksforgeeks.org/how-to-redirect-to-another-page-in-reactjs/
+https://stackblitz.com/github/remix-run/react-router/tree/main/examples/basic?file=src%2FApp.tsx
+
+
+==========================================================================
 PACKAGES
-bootstrap
+npm i bootstrap                               
 npm install primereact                  -       https://github.com/primefaces/primereact
-npm i react-data-table-component        -       https://www.npmjs.com/package/react-data-table-component
+npm i react-data-table-component        -       https://react-data-table-component.netlify.app/?path=/docs/getting-started-installation--docs
+
+
+
 
 
