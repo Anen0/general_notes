@@ -18,6 +18,31 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmy
 	- install php package
 		sudo apt install php-fpm php-mysql
 
+	nginx config file:
+		server{
+			listen <port>;
+			root /var/www/<domain_name>;
+
+			location /phpmyadmin {
+				alias /var/www/<domain_name>/phpmyadmin/;
+				index index.php;
+			}
+
+			location ~ \.php$ {
+				include snippets/fastcgi-php.conf;
+				fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+			}
+
+			location ~ /\.ht {
+				deny all;
+			}
+		}
+	
+
+	
+
+
+
 LAMP set up
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
@@ -176,6 +201,7 @@ MYSQL
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 src: https://www.rosehosting.com/blog/how-to-list-all-databases-in-mysql/
 login
+sudo mysql -u <name> -p
 sudo mysql
 
 
