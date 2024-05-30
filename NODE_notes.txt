@@ -98,7 +98,12 @@ npm i bootstrap
 npm install primereact                  -       https://github.com/primefaces/primereact
 npm i react-data-table-component        -       https://react-data-table-component.netlify.app/?path=/docs/getting-started-installation--docs
 npm i react-router-dom                  -       https://www.npmjs.com/package/react-router-dom
+
+
+Router
 npm i axios                             -       https://www.npmjs.com/package/axios
+                                        -       Axios/Fetch configuration pro & con
+                                                https://blog.logrocket.com/axios-vs-fetch-best-http-requests/
 
 
 
