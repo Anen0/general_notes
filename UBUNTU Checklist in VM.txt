@@ -519,6 +519,16 @@ Create a symbolic link to another folder:
 sudo ln -s /usr/share/phpmyadmin /var/www/your_domain/phpmyadmin
 sudo ln -s 1st_location 2nd_location
 
+another way:
+	To create a symbolic link to a file, open a terminal window and enter the command below:
+	ln -s [target] [symlink]
+
+	The command consists of the following elements:
+		-	The -s option instructs ln to create a symlink. With no options specified, the command creates a hard link.
+		-	[target] is the file the link references.
+		-	[symlink] is the location to save the link. If this element is omitted, the command places the symlink in the current working directory.
+
+
 UNLINK the file from the /sites-enabled/ directory:
 sudo unlink /etc/nginx/sites-enabled/default
 
