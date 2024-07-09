@@ -274,3 +274,12 @@ pip install -Iv (i.e. pip install -Iv MySQL_python==1.2.2)
 -v is for verbose. You can combine for even more verbosity (i.e. -vv) up to 3 times (e.g. -Ivvv).
 
 
+------------------------------------------------------------------------------------------------------------
+
+
+Install specific python versions on virtualenv
+py -m venv tutorial_env
+tutorial_env\Scripts\activate
+
+This will create a new virtual environment in the tutorial_env subdirectory, and configure the current shell to use it as the default python environment.
+
