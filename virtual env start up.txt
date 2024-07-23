@@ -281,5 +281,10 @@ Install specific python versions on virtualenv
 py -m venv tutorial_env
 tutorial_env\Scripts\activate
 
-This will create a new virtual environment in the tutorial_env subdirectory, and configure the current shell to use it as the default python environment.
+This will create a new virtual environment in the tutorial_env subdirectory, 
+and configure the current shell to use it as the default python environment.
+
+OR
+
+virtualenv --python=c:\PythonLocation\python.exe environmentName
 
