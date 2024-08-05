@@ -380,7 +380,7 @@ Generate SSH key
 type 'ssh-keygen -b 4096' in host system
 
 	now to copy 'id_rsa' from host system to server (ignore the quotes)
-		- scp '~/.ssh/id_rsa.pub' 'server_name@0.0.0.0:exact_location'
+		- scp ~/.ssh/id_rsa.pub server_name@0.0.0.0:exact_location
 
 OR use ssh-copy-id
 The syntax is:
