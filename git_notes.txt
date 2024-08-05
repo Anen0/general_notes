@@ -62,6 +62,17 @@ choose / make a branch
 git checkout -b (name of branch)
 
 ------------------------------------------------------------------------------------------------------------------------------
+Delete branch (locally) 
+	git branch -d <branch>
+
+Delete branch (remote)
+	git push <remote> --delete <branch>
+	Ex:
+		git push origin --delete latos
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
 How can I remove a commit on GitHub?
 https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
 

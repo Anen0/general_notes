@@ -143,6 +143,8 @@ To restart after changes:
 	sudo systemctl daemon-reload
 
 
+Move a directory
+	sudo mv fromPath/ toPath/	
 
 rename a directory:
 	mv /home/user/oldname /home/user/newname
