@@ -247,7 +247,8 @@ sudo chown -R $USER:$USER /var/www/
 sudo chown -R <current user> <directory>
 	more info
 		https://www.linode.com/docs/guides/modify-file-permissions-with-chmod/
-
+or
+sudo chown -v $USER <directory>
 
 MYSQL 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
