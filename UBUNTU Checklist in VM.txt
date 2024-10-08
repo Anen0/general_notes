@@ -371,14 +371,14 @@ show list of in the database
 
 Import DB from sql file in command line:
 	try:
-		mysql - username -p database_name < file.sql
+		mysql -u username -p database_name < /path/to/file.sql
 
 		Note 1: It is better to use the full path of the SQL file file.sql.
 		Note 2: Use -R and --triggers with mysqldump to keep the routines and triggers of the original database. They are not copied by default.
 		Note 3 You may have to create the (empty) database from MySQL if it doesn't exist already and the exported SQL doesn't contain CREATE DATABASE (exported with --no-create-db or -n option) before you can import it.
 
 	if you are logged in mysql already:
-		CREATE <db_name>;
+		CREATE DATABASE <db_name>;
 		mysql> use db_name;
 		mysql> source backup-file.sql;
 
@@ -750,6 +750,15 @@ NGINX: error 403 permission problems
 	more info: https://stackoverflow.com/questions/6795350/nginx-403-forbidden-for-all-files?noredirect=1&lq=1
 
 
+	403 Error in accessing STATIC files - error is due to Nginx not being in the same user group
+	more infor:
+	https://stackoverflow.com/questions/16808813/nginx-serve-static-file-and-got-403-forbidden
+
+	Modify nginx.conf
+		-	sudo nano /etc/nginx/nginx.conf
+
+
+
 -------------------------------------------------------------------------------------------------------------------------
 CHMOD persmission codes
 	The three digits of the chmod code set permissions for these groups in this order:
@@ -774,6 +783,7 @@ CHMOD persmission codes
 	chmod 777 apple.txt		-	Everybody can read, write to, or execute apple.txt
 	chmod 744 apple.txt		-	Only you can read, write to, or execute apple.txt Everybody can read apple.txt;
 	chmod 444 apple.txt		-	You can only read apple.txt, as everyone else.
+
 
 
 
@@ -896,7 +906,4 @@ Chaning Ports for Apache
 
 
 
-
-
-
-
+-------------------------------------------------------------------------------------------------------------------------

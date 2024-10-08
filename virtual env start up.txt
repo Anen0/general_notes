@@ -268,6 +268,10 @@ python3 ./mysite/manage.py syncdb
 install dependency first:
 sudo apt-get install python-dev default-libmysqlclient-dev libssl-dev
 
+or: 
+sudo apt-get install libmysqlclient-dev
+
+
 then:
 pip install --user flask-mysqldb
 
