@@ -164,3 +164,9 @@ If your local branch didn't have any unique commits, git will instead perform a 
 Install GIT in Ubuntu
 sudo apt install git-all
 
+
+------------------------------------------------------------------------------------------------------------------------------
+Reset to a previous version of a branch
+git reset --hard <commit hash key>
+
+
