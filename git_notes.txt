@@ -170,3 +170,20 @@ Reset to a previous version of a branch
 git reset --hard <commit hash key>
 
 
+------------------------------------------------------------------------------------------------------------------------------
+Rebase/merge/ pro & con
+GIT REBASE
+	pro	-	allwos for a cleaner commit history
+		-	provides a linear commit timeline
+	con	-	reduces traceability	
+
+
+
+GIT MERGE
+	pro	-	preserves commit history
+	con	-	make the history messy	
+
+
+
+
+

@@ -303,7 +303,7 @@ View MYSQL timezone
 
 
 
-Add user w/ permissions
+MYSQL: Add user w/ permissions
 src: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 running with no authentication plugin
 	CREATE USER 'username'@'host' IDENTIFIED BY 'password'; 
@@ -432,6 +432,10 @@ https://stackoverflow.com/questions/3635166/how-do-i-import-csv-file-into-a-mysq
 	ENCLOSED BY '"'
 	IGNORE 1 ROWS;
 
+	if not:
+		exit and login to mysql with this command
+			-	mysql --local_infile=1 -u <root> -p DB_name
+
 
 
 EXPORT data from database 
@@ -440,7 +444,9 @@ https://stackoverflow.com/questions/8217578/how-to-export-databases-through-comm
 	mysqldump -u <username> -p --no-tablespaces  --databases <database_name> > <database_file.sql>
 
 
-
+If you get an error in uploading databases from file
+	-	show global variables like 'local_infile';
+	-	set global local_infile=true;
 
 
 
@@ -450,6 +456,9 @@ src: https://linuxhint.com/change-mysql-root-password-ubuntu/
 
 stop mysql:
 	sudo systemctl stop mysql.service
+
+or gracefully stop the service (force timeout)
+	sudo systemctl stop mysql --no-block
 
 check if it has been stopped:
 	sudo systemctl status mysql.service
