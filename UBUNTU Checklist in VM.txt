@@ -414,7 +414,8 @@ IMPORT DB from sql file in command line:
 
 		Note 1: It is better to use the full path of the SQL file file.sql.
 		Note 2: Use -R and --triggers with mysqldump to keep the routines and triggers of the original database. They are not copied by default.
-		Note 3 You may have to create the (empty) database from MySQL if it doesn't exist already and the exported SQL doesn't contain CREATE DATABASE (exported with --no-create-db or -n option) before you can import it.
+		Note 3 You may have to create the (empty) database from MySQL if it doesn't exist already and the exported SQL doesn't 
+			   contain CREATE DATABASE (exported with --no-create-db or -n option) before you can import it.
 
 	if you are logged in mysql already:
 		CREATE DATABASE <db_name>;
@@ -973,7 +974,10 @@ Chaning Ports for Apache
 
 
 -------------------------------------------------------------------------------------------------------------------------
+REMOTE CONNECTION TO MYSQL
 
+- sudo mysql -u <database_username> -p -h <IP_address> -P <port_number>
+- then insert password
 
 
 -------------------------------------------------------------------------------------------------------------------------
