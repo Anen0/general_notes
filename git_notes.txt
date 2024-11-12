@@ -65,6 +65,9 @@ git checkout -b (name of branch)
 Delete branch (locally) 
 	git branch -d <branch>
 
+Delete branch that is not fully merged
+	git branch -D <branch>
+
 Delete branch (remote)
 	git push <remote> --delete <branch>
 	Ex:
