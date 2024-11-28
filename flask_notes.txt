@@ -23,10 +23,9 @@ For JSON posted with content type application/json, use request.get_json().
     data = request.get_json()
 
 
-JOURNALCTL
+PYTHON to JS
 ---------------------------------------------
-To actively follow the logs as they are being written, you can use the -f flag
-sudo journalctl -u <service> -f
+JSON.parse('{{ <data_from_python> | tojson }}');
 
 
 
