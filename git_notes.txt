@@ -187,6 +187,23 @@ GIT MERGE
 	con	-	make the history messy	
 
 
+------------------------------------------------------------------------------------------------------------------------------
+GIT LOOSE OBJECT - https://stackoverflow.com/questions/4254389/git-corrupt-loose-objects
+
+Your best bet is probably to simply re-clone from the remote repository (i.e., GitHub or other). 
+Unfortunately you will lose any unpushed commits and stashed changes, however your working copy should remain intact.
+
+First make a backup copy of your local files. Then do this from the root of your working tree:
+	rm -fr .git
+	git init
+	git remote add origin [your-git-remote-url]
+	git fetch
+	git reset --mixed origin/master
+	git branch --set-upstream-to=origin/master master
+
+Then commit any changed files as necessary.
+
+
 
 
 
