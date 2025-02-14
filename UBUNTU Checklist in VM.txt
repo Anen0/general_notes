@@ -230,6 +230,9 @@ Move a directory
 rename a directory:
 	mv /home/user/oldname /home/user/newname
 
+copy
+	sudo cp /old /new
+
 
 
 
@@ -460,6 +463,12 @@ sudo crontab -e
 		| +------------------**hour** (0-23)
 		+--------------------**minute** (0-59)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TIMERS for scheduled auto restarting of user made services
+	https://documentation.suse.com/smart/systems-management/html/systemd-working-with-timers/index.html
+
+	view the list of timers
+	sudo systemctl list-timers --all | grep <name of timer>
 
 
 ubuntu shared folder not showing up:
