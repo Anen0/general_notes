@@ -154,10 +154,18 @@ https://stackoverflow.com/questions/3635166/how-do-i-import-csv-file-into-a-mysq
 
 
 
-EXPORT data from database 
+EXPORT data from database :
 https://stackoverflow.com/questions/8217578/how-to-export-databases-through-command-line
 
-	mysqldump -u <username> -p --no-tablespaces  --databases <database_name> > <database_file.sql>
+	mysqldump -u <username> -p --no-tablespaces  --databases <database_name> > /path/<export_file.sql>
+
+Export specific rows: 	
+https://stackoverflow.com/questions/15287295/how-to-export-some-rows-of-a-mysql-table-from-a-where-clause
+
+	mysqldump -u <username> -p <database_name> <table_name> --where="Condition" > /path/<export_file.sql>
+
+More info in exporting in MYSQLDUMP
+https://electrictoolbox.com/mysqldump-selectively-dump-data/
 
 
 If you get an error in uploading databases from file
