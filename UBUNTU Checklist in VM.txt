@@ -432,7 +432,7 @@ https://www.youtube.com/watch?v=goToXTC96Co&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUx
 	1:07:54 - `client_max_body_size 5M;` - add this code in the config file to increase upload limit from 2MB to 5MB
 	1:08:30 - `sudo systemctl restart nginx`
 
-
+	Supervisor setup
 		.conf file content
 		[program:chatup]
 		directory=/home/kuryu-chan/Documents/chat_app_linux
