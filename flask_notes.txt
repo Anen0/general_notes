@@ -35,6 +35,15 @@ Get PATH of a directory in Python
     os.getcwd()
 
 
+PYTHON - List Comprehension (one line loop)
+---------------------------------------------
+https://www.w3schools.com/python/python_lists_comprehension.asp
+
+syntax  :   newlist = [ <expression> for <item> in <iterable> ]
+
+w/ condition
+syntax  :   newlist = [ <expression> for <item> in <iterable> if <condition> == True ]
+
 
 
 
