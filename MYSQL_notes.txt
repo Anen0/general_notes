@@ -225,4 +225,7 @@ REMOTE CONNECTION TO MYSQL
 
 
 
+-------------------------------------------------------------------------------------------------------------------------
+BACKUP MYSQL DATABASE
+https://phoenixnap.com/kb/how-to-backup-restore-a-mysql-database
 
