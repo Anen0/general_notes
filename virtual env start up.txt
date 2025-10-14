@@ -19,6 +19,18 @@ python3 -m pip install --upgrade pip   - upgrade pip
 pip3 install virtualenv
 
 
+
+In Windows but cant seem to make a venv
+  - python -m venv (env name)
+
+  to start
+  (env name)\Scripts\activate
+
+  to end
+  deactivate
+
+
+
 (VIRTUAL ENV IN LINUX)=====================================================================================
 sudo apt-get install python3-pip - Install pip first
 sudo pip3 install virtualenv - Then install virtualenv using pip3
