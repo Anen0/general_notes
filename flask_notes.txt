@@ -45,9 +45,26 @@ w/ condition
 syntax  :   newlist = [ <expression> for <item> in <iterable> if <condition> == True ]
 
 
-
-
 ---------------------------------------------
+Using environment variables  (reads key-value pairs from a .env file and can set them as environment variables)
+    -   pip install python-dotenv
+
+    folder structure:
+    .
+    ├── .env
+    └── foo.py
+
+
+    .env syntax:
+    key = value
+
+
+    in python file:
+        from dotenv import load_dotenv
+        load_dotenv()                   # take environment variables
+        env_var = os.getenv("key")      # access the variable's value
+
+
 ---------------------------------------------
 ---------------------------------------------
     
