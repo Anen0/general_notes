@@ -326,7 +326,7 @@ OR
 virtualenv --python=c:\PythonLocation\python.exe environmentName
 
 ------------------------------------------------------------------------------------------------------------
-IMPORTERROR: NO MODULE NAMED PIP IN WONDOWS
+IMPORTERROR: NO MODULE NAMED PIP IN WINDOWS
 Just be sure that you have included the Python executable 
 in the Windows Environment Variables, System PATH variable, and then run:
   - python -m ensurepip.
