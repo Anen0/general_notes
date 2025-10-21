@@ -151,6 +151,28 @@ conda create --name <env_name> --file requirements.txt
 conda env export --from-history --name my_env > myenv.yml or myenv.txt
 
 --------------------------------------------------------------------------------------------------------------------------
+Installing specific versions of packages:
+  'pip' supports more flexible ways to specify versions in your 'requirements.txt' file or 
+  directly on the command line (though for command line, direct '==' is common for a specific version).
+
+  Greater/Less Than or Equal To (>=, <=, >, <):
+  Ex:
+    pip install "requests>=2.25.0"          # Installs 2.25.0 or newer
+    pip install "requests<3.0.0"            # Installs any version less than 3.0.0
+    pip install "requests>=2.25.0,<3.0.0"   # Installs within a range
+  (Note: On some shells, especially Windows, you might need to quote arguments containing <, >, etc.)
+
+  Compatible Release (~=): package~=1.4.2 is roughly equivalent to package>=1.4.2, ==1.4.* (it will install 1.4.2, 1.4.3, etc., but not 1.5.0). 
+  package~=1.4 is roughly equivalent to package>=1.4, ==1.*.
+  Ex:
+    pip install "requests~=2.28" # Installs 2.28.0, 2.28.1, etc., but not 2.29.0
+
+  Not Equal (!=):
+    pip install "requests!=2.27.0"
+
+  More info: https://tutorialreference.com/python/examples/faq/python-how-to-pip-install-specific-package-version
+
+--------------------------------------------------------------------------------------------------------------------------
 
 to install:
 pip install flask 	-	for framework
