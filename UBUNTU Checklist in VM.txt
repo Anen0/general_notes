@@ -293,6 +293,35 @@ or
 sudo chown -v $USER <directory>
 
 
+File permissions in Ubuntu:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	# ls -l file
+	-rw-r--r-- 1 root root 0 Nov 19 23:49 file
+	|      ---
+	|   ---  |
+	|---  |  |
+	|  |  |  Other(r--)
+	|  |  |	
+	|  |  Group(r--)		r = Readable
+	|  |					w = Writeable
+	|  Owner (rw-)			x = Executable 
+	|						- = Denied
+	|
+	File type
+
+	_________________________
+	7	|	rwx		|	111	
+	6	|	rw-		|	110
+	5	|	r-x		|	101	
+	4	|	r--		|	100
+	3	|	-wx		|	011
+	2	|	-w-		|	010
+	1	|	--x		|	001
+	0	|	---		|	000
+
+	chmod 400 ------| 4 : owner
+					| 0 : group
+					| 0 : other 	
 
 
 SSH server

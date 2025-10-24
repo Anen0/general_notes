@@ -171,6 +171,8 @@ Installing specific versions of packages:
     pip install "requests!=2.27.0"
 
   More info: https://tutorialreference.com/python/examples/faq/python-how-to-pip-install-specific-package-version
+  test/practice the version conditions here: https://nok.github.io/pip-dev/
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
