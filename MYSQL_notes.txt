@@ -223,11 +223,16 @@ REMOTE CONNECTION TO MYSQL
 - sudo mysql -u <database_username> -p -h <IP_address> -P <port_number>
 - then insert password
 
+	-h = hostname
+	-P = upper case P, port number
+	-p = lower case P, password authentication 
 
 
 -------------------------------------------------------------------------------------------------------------------------
 BACKUP MYSQL DATABASE
 https://phoenixnap.com/kb/how-to-backup-restore-a-mysql-database
+
+
 
 
 
