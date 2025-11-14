@@ -335,7 +335,7 @@ ssh-keygen
 
 
 
-Set hostname
+Set hostname / check Linux version
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 hostnamectl set-hostname 'name of host'
 check if hostname is changed type in terminal:
