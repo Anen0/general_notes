@@ -817,8 +817,6 @@ Chaning Ports for Apache
 -	sudo systemctl status apache2
 
 
-
-
 -------------------------------------------------------------------------------------------------------------------------
 Monitor service JOURNALCTL
 
@@ -829,6 +827,16 @@ sudo journalctl -u <service> -f
 more info: https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
 
 
+-------------------------------------------------------------------------------------------------------------------------
+
+Read files from the terminal
+
+	cat /var/log/file.txt	->	for files with short content
+	less /var/log/file.txt	->	for files with long content
+
+	to view only the lines
+	head -n <number of lines> /var/log/file.txt		->		view the lines near the head of the file
+	tail -n <number of lines> /var/log/file.txt		->		view the lines near the tail-end of the file	
 
 
 -------------------------------------------------------------------------------------------------------------------------
