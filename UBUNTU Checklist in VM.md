@@ -831,12 +831,12 @@ more info: https://www.digitalocean.com/community/tutorials/how-to-use-journalct
 
 Read files from the terminal
 
-	cat /var/log/file.txt	->	for files with short content
-	less /var/log/file.txt	->	for files with long content
+	cat /var/log/file.txt	->	read the content of short files
+	less /var/log/file.txt	->	read the content of long files in an interactive way
 
 	to view only the lines
-	head -n <number of lines> /var/log/file.txt		->		view the lines near the head of the file
-	tail -n <number of lines> /var/log/file.txt		->		view the lines near the tail-end of the file	
+	head -n <number of lines> /var/log/file.txt		->		view the first few lines of a file
+	tail -n <number of lines> /var/log/file.txt		->		view the last few lines of a file	
 
 
 -------------------------------------------------------------------------------------------------------------------------
