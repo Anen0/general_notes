@@ -45,3 +45,25 @@ link: https://docs.docker.com/engine/install/ubuntu/
     3)
         Verify that the installation is successful by running the hello-world image:
             -   sudo docker run hello-world
+
+-------------------------------------------------------------------------------------------------
+
+Docker file configuration:
+    FROM <OS><specific version>
+        ex: FROM ubuntu:22.04
+
+    RUN <Execute/install build commands.>
+        ex: RUN pip3 install --no-cache-dir -r requirements.txt
+
+    WORKDIR <change working directory>
+        ex: WORKDIR /menudo
+
+    COPY requirements.txt .
+        ex: COPY requirements.txt
+
+    EXPOSE <Describe which ports your application is listening on>
+        ex: EXPOSE 5088
+
+    CMD 
+    # Run the application using gunicorn
+    CMD ["gunicorn", "--bind", "0.0.0.0:5088", "wsgi:app"]
