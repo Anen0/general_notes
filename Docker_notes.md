@@ -31,7 +31,6 @@ link: https://docs.docker.com/engine/install/ubuntu/
 
         sudo apt-get update
 
-
     2)
         sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
@@ -67,3 +66,9 @@ Docker file configuration:
     CMD 
     # Run the application using gunicorn
     CMD ["gunicorn", "--bind", "0.0.0.0:5088", "wsgi:app"]
+
+-------------------------------------------------------------------------------------------------
+
+Build a container:
+    sudo docker build -t <tag name> <PATH>
+        ex: sudo docker build -t tagname .  --> the "." is the address of the current directory
