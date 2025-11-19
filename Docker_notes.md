@@ -63,12 +63,25 @@ Docker file configuration:
     EXPOSE <Describe which ports your application is listening on>
         ex: EXPOSE 5088
 
-    CMD 
-    # Run the application using gunicorn
-    CMD ["gunicorn", "--bind", "0.0.0.0:5088", "wsgi:app"]
+    CMD <Run the application using gunicorn>
+        ex: CMD ["gunicorn", "--bind", "0.0.0.0:5088", "wsgi:app"]
 
 -------------------------------------------------------------------------------------------------
 
 Build a container:
     sudo docker build -t <tag name> <PATH>
         ex: sudo docker build -t tagname .  --> the "." is the address of the current directory
+
+-------------------------------------------------------------------------------------------------
+
+Check the list of images currently running:
+    -   sudo docker images
+
+Check the list of all containers:
+    -   sudo docker ps -a
+
+Stop a currently running container:
+    -   docker stop <container_ID>
+
+Remove the cointainer:
+    -   sudo docker rm <container_ID>
