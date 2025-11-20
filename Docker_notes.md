@@ -70,18 +70,27 @@ Docker file configuration:
 
 Build a container:
     sudo docker build -t <tag name> <PATH>
-        ex: sudo docker build -t tagname .  --> the "." is the address of the current directory
+        ex: sudo docker build -t tagname .      --->    the "." is the address of the current directory
 
 -------------------------------------------------------------------------------------------------
 
-Check the list of images currently running:
+List of IMAGES currently running:
     -   sudo docker images
 
-Check the list of all containers:
+Remove images:
+    -   sudo docker image rm <options> <image_ID>
+        ex: sudo docker image rm <image_ID>
+
+Remove images (forcefully):
+    -   sudo docker image rm -f <image_ID>
+        ex: sudo docker image rm -f <image_ID>
+
+
+List of all CONTAINERS:
     -   sudo docker ps -a
 
 Stop a currently running container:
     -   docker stop <container_ID>
 
-Remove the cointainer:
+Remove the COINTAINER:
     -   sudo docker rm <container_ID>
