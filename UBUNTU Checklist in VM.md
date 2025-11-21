@@ -336,13 +336,25 @@ ssh-keygen
 
 
 Set hostname / check Linux version
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 hostnamectl set-hostname 'name of host'
 check if hostname is changed type in terminal:
 	hostname
 
+
+
+
+Check OS status/specs
+------------------------------------------------------------------------------------------------------------------------------------
+lscpu			-	shows detailed info about your CPU
+sudo lshw		-	Provides comprehensive hardware details, including CPU, memory, and network devices.
+lshw -short		-	Presents the output of lshw in a more condensed table format
+cat /etc/os-release		-	Shows the specific name and version of your Ubuntu OS
+
+
+
 Generate SSH key
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 type 'ssh-keygen -b 4096' in host system
 
 	now to copy 'id_rsa' from host system to server (ignore the quotes)

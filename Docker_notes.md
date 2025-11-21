@@ -74,6 +74,12 @@ Build a container:
 
 -------------------------------------------------------------------------------------------------
 
+Docker for Data Science Cheat Sheet
+
+https://www.datacamp.com/cheat-sheet/docker-for-data-science-cheet-sheet
+
+-------------------------------------------------------------------------------------------------
+
 List of IMAGES currently running:
     -   sudo docker images
 
