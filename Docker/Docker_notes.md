@@ -77,30 +77,30 @@ link: https://docs.docker.com/engine/install/ubuntu/
     -   sudo docker images
 
 # Remove images:
-    -   sudo docker image rm <options> <image_ID>
+    sudo docker image rm <options> <image_ID>
         ex: sudo docker image rm <image_ID>
 
 # Remove images (forcefully):
-    -   sudo docker image rm -f <image_ID>
+    sudo docker image rm -f <image_ID>
         ex: sudo docker image rm -f <image_ID>
 
 
 # List of all CONTAINERS:
-    -   sudo docker ps -a
+    sudo docker ps -a
 
 # Stop a currently running container:
-    -   docker stop <container_ID>
+    docker stop <container_ID>
 
 # Remove the COINTAINER:
-    -   sudo docker rm <container_ID>
+    sudo docker rm <container_ID>
 
 
 -------------------------------------------------------------------------------------------------
 
 #  Docker credential helpers
-    for securing credentials when logging in
+for securing credentials when logging in
     
-    github link and doc:    https://github.com/docker/docker-credential-helpers
+github link and doc:    https://github.com/docker/docker-credential-helpers
 
 *Note*  :   we are using `pass` as a credential helper for Ubuntu
     You can build the credential helpers using Docker:
@@ -129,6 +129,6 @@ link: https://docs.docker.com/engine/install/ubuntu/
         3. Put that binary in your $PATH, so Docker can find it.
             $ cp bin/build/docker-credential-pass /usr/local/bin/
 
-*ChatGPT link* :   https://chatgpt.com/share/6925021e-93bc-800c-92c7-c2bf2578650d
+*ChatGPT troubleshoot link* :   https://chatgpt.com/share/6925021e-93bc-800c-92c7-c2bf2578650d
 
 

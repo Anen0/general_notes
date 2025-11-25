@@ -1,37 +1,41 @@
-set up virtual environment:
-pip install virtualenv
-virtualenv (env name)
-virtualenv -p (/usr/bin/python2.7) venv - Python interpreter of your choice (like python2.7)
-(env name)\Scripts\activate.bat
+## Set up virtual environment:
+- pip install virtualenv
+- virtualenv (environment name)
+- virtualenv -p (/usr/bin/python2.7) venv - _Python interpreter of your choice (like python2.7)_
 
-deactivate virtualenv:
-(env name)\Scripts\deactivate.bat
+#### Activate the env:
+
+- (environment name)\Scripts\activate.bat
+
+#### Deactivate virtualenv:
+- (env name)\Scripts\deactivate.bat
 
 
-Install PIP in windows:
+## Install PIP in windows:
   - install "get-pip.py" from  https://bootstrap.pypa.io/get-pip.py
   - python get-pip.py
   
 
 
-Python3
-python3 -m pip install --upgrade pip   - upgrade pip
-pip3 install virtualenv
+  Python3
+  python3 -m pip install --upgrade pip   - upgrade pip
+  pip3 install virtualenv
 
 
 
-In Windows but cant seem to make a venv
+## In Windows but cant seem to make a venv
   - python -m venv (env name)
 
-  to start
-  (env name)\Scripts\activate
+_to start_:
+  - (env name)\Scripts\activate
 
-  to end
-  deactivate
+_to end_:
+  - deactivate
 
 
 
-(VIRTUAL ENV IN LINUX)=====================================================================================
+# `VIRTUAL ENV IN LINUX`
+=================================================
 sudo apt-get install python3-pip - Install pip first
 sudo pip3 install virtualenv - Then install virtualenv using pip3
 virtualenv venv - Now create a virtual environment
