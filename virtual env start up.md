@@ -18,8 +18,9 @@
 
 
   Python3
-  python3 -m pip install --upgrade pip   - upgrade pip
-  pip3 install virtualenv
+  ---
+    python3 -m pip install --upgrade pip   - upgrade pip
+    pip3 install virtualenv
 
 
 
@@ -35,236 +36,257 @@ _to end_:
 
 
 # `VIRTUAL ENV IN LINUX`
-=================================================
-sudo apt-get install python3-pip - Install pip first
-sudo pip3 install virtualenv - Then install virtualenv using pip3
-virtualenv venv - Now create a virtual environment
+<!-- ================================================= -->
 
-virtualenv -p /usr/bin/python2.7 venv - You can also use a Python interpreter of your choice
+    sudo apt-get install python3-pip  --->  Install pip first
+    sudo pip3 install virtualenv      --->  Then install virtualenv using pip3
+    virtualenv venv                   --->  Now create a virtual environment
 
-source venv/bin/activate - Active your virtual environment
-deactivate - To deactivate
+  >*You can also use a Python interpreter of your choice*  
+  > virtualenv -p /usr/bin/python2.7 venv 
 
-virtualenv -p python3 myenv   - Create virtualenv using Python3
-python3 -m venv myenv   - Instead of using virtualenv you can use this command in Python3 
+    source venv/bin/activate            --->    Active your virtual environment
+    deactivate                          --->    To deactivate
+  >
+    virtualenv -p python3 myenv   --->    Create virtualenv using Python3
+    python3 -m venv myenv         --->    Instead of using virtualenv you can use this command in Python3 
 
-===========================================================================================================
+<!-- =========================================================================================================== -->
 
-Installing different Python version in Ubuntu
+## `Installing different Python version in Ubuntu`
+
 https://tellor.io/blog/how-to-install-python-3-9-and-venv-on-ubuntu/
 https://medium.com/analytics-vidhya/how-to-install-and-switch-between-different-python-versions-in-ubuntu-16-04-dc1726796b9b#:~:text=To%20switch%20between%20python%20version,used%20as%20default%20python%20version.&text=Here%20I%20set%20the%20priority,%2C%203%2C%204%2C%205.
 
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.9                  - install the python version
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install python3.9      --->    install the python version
 
 
-Switching Python versions
+<!-- Switching Python versions
+
+=========================================================================================================== -->
+
+## WSL commands
+    using conda env  
+    source activate <environment_name>  
+_src_ : https://www.bradleysawler.com/engineering/python-conda-wsl-2-ubuntu-setup-on-windows-10/
 
 
-
-===========================================================================================================
-
-WSL commands
-using conda env
-source activate <env name>
-https://www.bradleysawler.com/engineering/python-conda-wsl-2-ubuntu-setup-on-windows-10/
-
-
-===========================================================================================================
+<!-- =========================================================================================================== -->
 
 or
 
-sudo apt-get update
-sudo apt-get -y install pipenv
+    sudo apt-get update
+    sudo apt-get -y install pipenv
 
-pipenv install requests - Pipenv will install the excellent Requests library and create a Pipfile for you in your project’s directory. 
-	The Pipfile is used to track which dependencies your project needs in case you need to re-install them, such as when you share your 
-	project with others
-activate: pipenv shell
-deactivate: exit 
+`pipenv install requests` - Pipenv will install the excellent Requests library and create a Pipfile for you in your project’s directory.  
 
-//pipenv docs 
-https://docs.python-guide.org/dev/virtualenvs/
+The Pipfile is used to track which dependencies your project needs in case you need to re-install them, such as when you share your 
+project with others
+
+    activate: pipenv shell
+    deactivate: exit 
+
+***pipenv docs***   
+_src_ : https://docs.python-guide.org/dev/virtualenvs/
 
 ------------------------------------------------------------------------------------------------------------
-INSTALL PIPENV (in ubuntu)
+## `INSTALL PIPENV (in ubuntu)`
 
-sudo -H pip install -U pipenv
+    sudo -H pip install -U pipenv
 
-  Activate
+  Activate environment:
+    
     pipenv shell
 
   Exiting the virtualenv
+
     exit
 
   Install package
+
     pipenv install 'packagename'
 
   Run with pipenv
+
     pipenv run *  
 
   Install in dev-packages(packages only meant for development not in production)
+
     pipenv install 'packagename' --dev
 
   Install from Pipfile
+
     pipenv install
 
   Install from requirements.txt
+
     pipenv install -r ./requirements.txt
 
   generate req txt
+
     pipenv run pip freeze > requirements.txt
 
   Check security vulnerabilities
+
     pipenv check
   
   Check dependency graph
+
     pipenv graph
   
   Ignore pipfile
+
     pipenv install --ignore-pipfile
   
   Set lockfile - before deployment
+
     pipenv lock
 
   View virtual env. location
+
     pipenv --venv
 
   View project home directory
+
     pipenv --where
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 
+## `Make requirements`: 
+    pip freeze > requirements.txt
 
---------------------------------------------------------------------------------------------------------------------------
+## `Install requirements`: 
+    pip install -r requirements.txt
 
-# make requirements: 
-pip freeze > requirements.txt
+## `List all packages`
+    pip list
 
-# install requirements: 
-pip install -r requirements.txt
+## `Install using Conda`:
+    conda create --name <env_name> --file requirements.txt
 
-# list all packages
-pip list
-
-# install using Conda:
-conda create --name <env_name> --file requirements.txt
-
-# make requirements using conda:
-conda env export --from-history --name my_env > myenv.yml or myenv.txt
+## `Make requirements using conda`:
+    conda env export --from-history --name my_env > myenv.yml or myenv.txt
 
 --------------------------------------------------------------------------------------------------------------------------
-Installing specific versions of packages:
-  'pip' supports more flexible ways to specify versions in your 'requirements.txt' file or 
+## `Installing specific versions of packages`:
+  `pip` supports more flexible ways to specify versions in your 'requirements.txt' file or 
   directly on the command line (though for command line, direct '==' is common for a specific version).
 
-  Greater/Less Than or Equal To (>=, <=, >, <):
-  Ex:
-    pip install "requests>=2.25.0"          # Installs 2.25.0 or newer
-    pip install "requests<3.0.0"            # Installs any version less than 3.0.0
-    pip install "requests>=2.25.0,<3.0.0"   # Installs within a range
-  (Note: On some shells, especially Windows, you might need to quote arguments containing <, >, etc.)
+  Greater/Less Than or Equal To (>=, <=, >, <):  
+  Example:
+
+      pip install "requests>=2.25.0"          # Installs 2.25.0 or newer
+      pip install "requests<3.0.0"            # Installs any version less than 3.0.0
+      pip install "requests>=2.25.0,<3.0.0"   # Installs within a range
+  (***Note*** : On some shells, especially Windows, you might need to quote arguments containing <, >, etc.)
 
   Compatible Release (~=): package~=1.4.2 is roughly equivalent to package>=1.4.2, ==1.4.* (it will install 1.4.2, 1.4.3, etc., but not 1.5.0). 
-  package~=1.4 is roughly equivalent to package>=1.4, ==1.*.
-  Ex:
-    pip install "requests~=2.28" # Installs 2.28.0, 2.28.1, etc., but not 2.29.0
+  package~=1.4 is roughly equivalent to package>=1.4, ==1.*.  
+  Example:
+    
+      pip install "requests~=2.28" # Installs 2.28.0, 2.28.1, etc., but not 2.29.0
 
   Not Equal (!=):
-    pip install "requests!=2.27.0"
 
-  More info: https://tutorialreference.com/python/examples/faq/python-how-to-pip-install-specific-package-version
+      pip install "requests!=2.27.0"
+
+  _More info_: https://tutorialreference.com/python/examples/faq/python-how-to-pip-install-specific-package-version
   test/practice the version conditions here: https://nok.github.io/pip-dev/
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 
---------------------------------------------------------------------------------------------------------------------------
+### To install:
 
-to install:
-pip install flask 	-	for framework
-pip install flask-sqlalchemy 	- for DB
-pip install flask-bcrypt 	- for encryption
-pip install flask-login 	- for managing logins
-pip install flask-wtf - form validation
-pip install Pillow 	- resizes image
+    pip install flask             --->  for framework
+    pip install flask-sqlalchemy  --->  for DB
+    pip install flask-bcrypt      --->  for encryption
+    pip install flask-login       --->  for managing logins
+    pip install flask-wtf         --->  form validation
+    pip install Pillow            --->  resizes image
 
-pip install flask-mail - send email 
-
-
-
-create db using terminal:
-from (name_of_file) import db
-db.create_all()
-
-multiple db:
-db.create_all(bind=['users'])
-db.create_all(bind='appmeta')
-
-*Read sqlite db
-in command prompt
-
-sqlite3 (db_name.db)
-.tables
-select * from (table_name);
-
-.schema
+    pip install flask-mail        --->  send email 
 
 
 
-generate random hex for 'secret key' for environment variable
+### Create db using terminal:
+
+    from (name_of_file) import db
+    db.create_all()
+
+    multiple db:
+    db.create_all(bind=['users'])
+    db.create_all(bind='appmeta')
+
+*Read sqlite db in command prompt
+
+    sqlite3 (db_name.db)
+    .tables
+    select * from (table_name);
+
+    .schema
+
+
+## `Generate random hex for 'secret key' for environment variable`
 open terminal, then go to python:
-import secrets
-secrets.token_hex(any_number) ex: 8, 16, 32, 64, etc
+
+    import secrets
+    secrets.token_hex(any_number)   example: 8, 16, 32, 64, etc
 
 
-reset password using email:
-https://www.youtube.com/watch?v=vutyTx7IaAI&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=10&ab_channel=CoreySchafer
+## `reset password using email`:
+_src_ : https://www.youtube.com/watch?v=vutyTx7IaAI&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=10&ab_channel=CoreySchafer
 
 in case of SMTPError in sending emails in gmail:
 https://stackoverflow.com/questions/16512592/login-credentials-not-working-with-gmail-smtp
 
 
 write in python terminal
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+
+    from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 -----------------------------------------------------------------------------------------------------------
-(LINUX: START XAMPP)
-assuming xamp has been installed
-sudo /opt/lampp/manager-linux-x64.run
+## (LINUX: START XAMPP)
+    assuming xamp has been installed
+    sudo /opt/lampp/manager-linux-x64.run
 
-start xampp
-sudo /opt/lampp/xampp OR sudo /opt/lampp/lampp start
+    start xampp
+    sudo /opt/lampp/xampp OR sudo /opt/lampp/lampp start
 
-start xampp server graphical tool to manage servers
-cd /opt/lampp AND sudo ./manager-linux.run OR sudo ./manager-linux-x64.run
+    start xampp server graphical tool to manage servers
+    cd /opt/lampp AND sudo ./manager-linux.run OR sudo ./manager-linux-x64.run
 
-stop xampp
-sudo /opt/lampp/xampp OR sudo /opt/lampp/lampp stop
+    stop xampp
+    sudo /opt/lampp/xampp OR sudo /opt/lampp/lampp stop
 
-****************************
-(MYSQL XAMPP/LAMPP: START/STOP)
-if in case you have trouble in starting the mysql database, 
-stop Mysql and apache2
-sudo service mysql stop
-sudo /etc/init.d/apache2 stop
-
-
-****************************
-CHECK THE STATUS OF mysql.service
-systemctl status mysql.service
-sudo systemctl start mysql
-sudo systemctl stop mysql
+    ****************************
+    (MYSQL XAMPP/LAMPP: START/STOP)
+    if in case you have trouble in starting the mysql database, 
+    stop Mysql and apache2
+    sudo service mysql stop
+    sudo /etc/init.d/apache2 stop
 
 
+    ****************************
+    CHECK THE STATUS OF mysql.service
+    systemctl status mysql.service
+    sudo systemctl start mysql
+    sudo systemctl stop mysql
 
-Mysql to SQLite - https://github.com/simonw/db-to-sqlite
-pip install (--user) db-to-sqlite
 
-Usage: db-to-sqlite [OPTIONS] CONNECTION PATH
 
-  Load data from any database into SQLite.
-  PATH is a path to the SQLite file to create, e.c. /tmp/my_database.db
+## Mysql to SQLite
+  _src_ : https://github.com/simonw/db-to-sqlite
+
+    pip install (--user) db-to-sqlite
+  >
+  >  Usage: db-to-sqlite [OPTIONS] CONNECTION PATH
+
+  >  Load data from any database into SQLite.  
+  >  PATH is a path to the SQLite file to create, e.c. /tmp/my_database.db
 
   CONNECTION is a SQLAlchemy connection string, for example:
 
@@ -274,92 +296,102 @@ Usage: db-to-sqlite [OPTIONS] CONNECTION PATH
       mysql://root@localhost/my_database
       mysql://username:passwd@localhost/my_database
 
-  More: https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls
+  _More_: https://docs.sqlalchemy.org/en/13/core/engines.html#database-urls
 
-Options:
-  --version                     Show the version and exit.
-  --all                         Detect and copy all tables
-  --table TEXT                  Specific tables to copy
-  --skip TEXT                   When using --all skip these tables
-  --redact TEXT...              (table, column) pairs to redact with ***
-  --sql TEXT                    Optional SQL query to run
-  --output TEXT                 Table in which to save --sql query results
-  --pk TEXT                     Optional column to use as a primary key
-  --index-fks / --no-index-fks  Should foreign keys have indexes? Default on
-  -p, --progress                Show progress bar
-  --help                        Show this message and exit.
+    Options:
+      --version                     Show the version and exit.
+      --all                         Detect and copy all tables
+      --table TEXT                  Specific tables to copy
+      --skip TEXT                   When using --all skip these tables
+      --redact TEXT...              (table, column) pairs to redact with ***
+      --sql TEXT                    Optional SQL query to run
+      --output TEXT                 Table in which to save --sql query results
+      --pk TEXT                     Optional column to use as a primary key
+      --index-fks / --no-index-fks  Should foreign keys have indexes? Default on
+      -p, --progress                Show progress bar
+      --help                        Show this message and exit.
 
 -----------------------------------------------------------------------------------------------------------
-(LINUX: ERRORNO 2, UNABLE TO LOCATE FILE)
-Ex:
-"usr/bin/python3: can't open file '/home/noman/app.py': [Errno 2] No such file or directory flask in linux"
+## `(LINUX: ERRORNO 2, UNABLE TO LOCATE FILE)`
+Example:
+    
+    "usr/bin/python3: can't open file '/home/noman/app.py': [Errno 2] No such file or directory flask in linux"
 
-Explination:
+_Explination_:
 https://www.pythonanywhere.com/forums/topic/756/
 
 Use either:
-python ./mysite/manage.py syncdb
-python3 ./mysite/manage.py syncdb
+
+    python ./mysite/manage.py syncdb
+    python3 ./mysite/manage.py syncdb
 
 
 -----------------------------------------------------------------------------------------------------------
-(FLASK-MYSQLDB: INSTALLATION IN LINUX)
+## `FLASK-MYSQLDB: INSTALLATION IN LINUX`
 
 install dependency first:
-sudo apt-get install python-dev default-libmysqlclient-dev libssl-dev
 
-or: 
-sudo apt-get install libmysqlclient-dev
+    sudo apt-get install python-dev default-libmysqlclient-dev libssl-dev
+
+OR: 
+    
+    sudo apt-get install libmysqlclient-dev
 
 
 then:
-pip install --user flask-mysqldb
+    
+    pip install --user flask-mysqldb
 
-https://stackoverflow.com/questions/58957474/how-to-install-flask-mysqldb-for-python
+_link_ : https://stackoverflow.com/questions/58957474/how-to-install-flask-mysqldb-for-python
 
 
 ------------------------------------------------------------------------------------------------------------
 
-Uninstall a package
-pip uninstall <package name>
+## `Uninstall a package`
+    pip uninstall <package_name>
 
-more info:
+_more info_:
 https://www.activestate.com/resources/quick-reads/how-to-uninstall-python-packages/
 
 ------------------------------------------------------------------------------------------------------------
 
 
-Installing a specific/downgrade a version of a package
-https://stackoverflow.com/questions/5226311/installing-specific-package-version-with-pip
+## `Installing a specific/downgrade a version of a package`
+
+_src_ : https://stackoverflow.com/questions/5226311/installing-specific-package-version-with-pip
 
 
-pip install -Iv (i.e. pip install -Iv MySQL_python==1.2.2)
+    pip install -Iv (i.e. pip install -Iv MySQL_python==1.2.2)
 
--I stands for --ignore-installed which will ignore the installed packages, overwriting them.
--v is for verbose. You can combine for even more verbosity (i.e. -vv) up to 3 times (e.g. -Ivvv).
-
-
-------------------------------------------------------------------------------------------------------------
+`-I` stands for --ignore-installed which will ignore the installed packages, overwriting them.  
+`-v` is for verbose. You can combine for even more verbosity (i.e. -vv) up to 3 times (e.g. -Ivvv).
 
 
-Install specific python versions on virtualenv
-py -m venv tutorial_env
-tutorial_env\Scripts\activate
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+
+
+## `Install specific python versions on virtualenv`
+
+    py -m venv tutorial_env
+    tutorial_env\Scripts\activate
 
 This will create a new virtual environment in the tutorial_env subdirectory, 
 and configure the current shell to use it as the default python environment.
 
 OR
 
-virtualenv --python=c:\PythonLocation\python.exe environmentName
+    virtualenv --python=c:\PythonLocation\python.exe environmentName
 
 ------------------------------------------------------------------------------------------------------------
-IMPORTERROR: NO MODULE NAMED PIP IN WINDOWS
+## `IMPORTERROR: NO MODULE NAMED PIP IN WINDOWS`
+
 Just be sure that you have included the Python executable 
 in the Windows Environment Variables, System PATH variable, and then run:
-  - python -m ensurepip.
+    
+    python -m ensurepip.
 
 or if you have permission issue, run:
-  - python -m ensurepip --user
+    
+    python -m ensurepip --user
 
   

@@ -1,4 +1,4 @@
-# Install Docker in Ubuntu Linux (20.04 LTS)
+## `Install Docker in Ubuntu Linux (20.04 LTS)`
 link: https://docs.docker.com/engine/install/ubuntu/
 
     <!-- Install using apt repository -->
@@ -46,7 +46,7 @@ link: https://docs.docker.com/engine/install/ubuntu/
 
 -------------------------------------------------------------------------------------------------
 
-# Docker file configuration:
+## `Docker file configuration`:
     FROM <OS><specific version>
         ex: FROM ubuntu:22.04
 
@@ -67,66 +67,76 @@ link: https://docs.docker.com/engine/install/ubuntu/
 
 -------------------------------------------------------------------------------------------------
 
-# Build a container:
+## `Build a container`:
     sudo docker build -t <tag name> <PATH>
         ex: sudo docker build -t tagname .      --->    the "." is the address of the current directory
 
 -------------------------------------------------------------------------------------------------
 
-# List of IMAGES currently running:
-    -   sudo docker images
+## `List of IMAGES currently running`:
+    sudo docker images
 
-# Remove images:
-    sudo docker image rm <options> <image_ID>
-        ex: sudo docker image rm <image_ID>
+## `Remove images`:
+-   Normal way of removing:
 
-# Remove images (forcefully):
-    sudo docker image rm -f <image_ID>
-        ex: sudo docker image rm -f <image_ID>
+        sudo docker image rm <options> <image_ID>
+
+-   Remove images (forcefully):
+
+        sudo docker image rm -f <image_ID>
 
 
-# List of all CONTAINERS:
+## `List of all CONTAINERS`:
     sudo docker ps -a
 
-# Stop a currently running container:
+## `Stop a currently running container`:
     docker stop <container_ID>
 
-# Remove the COINTAINER:
+## `Remove the COINTAINER`:
     sudo docker rm <container_ID>
 
 
 -------------------------------------------------------------------------------------------------
 
-#  Docker credential helpers
+##  `Docker credential helpers`
 for securing credentials when logging in
     
 github link and doc:    https://github.com/docker/docker-credential-helpers
 
-*Note*  :   we are using `pass` as a credential helper for Ubuntu
+***Note***  :   we are using `pass` as a credential helper for Ubuntu
     You can build the credential helpers using Docker:
-        # install emulators
-        $ docker run --privileged --rm tonistiigi/binfmt --install all
 
-        # create builder
-        $ docker buildx create --use
+Install emulators
 
-        # build credential helpers from remote repository and output to ./bin/build
-        $ docker buildx bake "https://github.com/docker/docker-credential-helpers.git"
+    $ docker run --privileged --rm tonistiigi/binfmt --install all
 
-        # or from local source
-        $ git clone https://github.com/docker/docker-credential-helpers.git
-        $ cd docker-credential-helpers
-        $ docker buildx bake
+Create builder
+
+    $ docker buildx create --use
+
+build credential helpers from remote repository and output to ./bin/build
+
+    $ docker buildx bake "https://github.com/docker/docker-credential-helpers.git"
+
+OR from local source
+
+    $ git clone https://github.com/docker/docker-credential-helpers.git
+    $ cd docker-credential-helpers
+    $ docker buildx bake
     
-    Or if the toolchain is already installed on your machine:
-        1. Download the source.
+Or if the toolchain is already installed on your machine:
+
+-   1. Download the source.
+
             $ git clone https://github.com/docker/docker-credential-helpers.git
             $ cd docker-credential-helpers
+        
+-   2. Use `make` to build the program you want. That will leave an executable in the bin directory inside the repository.
             
-        2. Use "make" to build the program you want. That will leave an executable in the bin directory inside the repository.
             $ make pass
 
-        3. Put that binary in your $PATH, so Docker can find it.
+-   3. Put that binary in your $PATH, so Docker can find it.
+            
             $ cp bin/build/docker-credential-pass /usr/local/bin/
 
 *ChatGPT troubleshoot link* :   https://chatgpt.com/share/6925021e-93bc-800c-92c7-c2bf2578650d

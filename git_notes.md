@@ -1,100 +1,102 @@
 
-create a new repository on the command line
-echo "# hello_world" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Anen0/hello_world.git
-git push -u origin main
-                
-…or push an existing repository from the command line
-git remote add origin https://github.com/Anen0/hello_world.git
-git branch -M main
-git push -u origin main
+## `Create a new repository on the command line`
+	echo "# hello_world" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git branch -M main
+	git remote add origin https://github.com/Anen0/hello_world.git
+	git push -u origin main
+					
+	…or push an existing repository from the command line
+	git remote add origin https://github.com/Anen0/hello_world.git
+	git branch -M main
+	git push -u origin main
 
-pull from a repository
-git pull origin main
+	pull from a repository
+	git pull origin main
 
-------------------------------------------------------------------------------------------------------------------------------
-Putting Personal Access Token:
-token: "<token>"
-	   "git remote add origin https://<username>:<token>@github.com/<repo>.git"
-	   
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Putting Personal Access Token`:
+	git remote add origin https://<username>:<token>@github.com/<repo>.git
 	   
 ------------------------------------------------------------------------------------------------------------------------------
-git config --global user.name 'Nomad'
-git config --global user.email "yur email"
+	git config --global user.name 'Nomad'
+	git config --global user.email "yur email"
 
-see the signed in user
-git config --global --list
+	see the signed in user
+	git config --global --list
 
         
-ubuntu VM: add shared folder
-sudo usermod -aG vboxsf userName
-https://askubuntu.com/questions/161759/how-to-access-a-shared-folder-in-virtualbox
+## Ubuntu VM: `add shared folder`
+	sudo usermod -aG vboxsf userName
+_src_ : https://askubuntu.com/questions/161759/how-to-access-a-shared-folder-in-virtualbox
 
 ------------------------------------------------------------------------------------------------------------------------------
-set/change origin url
-git remote set-url origin (https://git-repo/new-repository.git)
+## `Set/change origin URL`
+	git remote set-url origin (https://git-repo/new-repository.git)
 
-------------------------------------------------------------------------------------------------------------------------------
-Renaming branches: If you have a local clone, you can update it by running the following commands.
-git branch -m main_2 main
-git fetch origin
-git branch -u origin/main main
-git remote set-head origin -a
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Renaming branches`
+If you have a local clone, you can update it by running the following commands.
 
-------------------------------------------------------------------------------------------------------------------------------
-verify origin
-git remote -v
+	git branch -m main_2 main
+	git fetch origin
+	git branch -u origin/main main
+	git remote set-head origin -a
 
-------------------------------------------------------------------------------------------------------------------------------
-delete a repo locally 
-rm -rf .git*
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Verify origin`
+	git remote -v
 
-------------------------------------------------------------------------------------------------------------------------------
-show the url to repo is taken from
-git remote get-url origin
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Delete a repo locally` 
+	rm -rf .git*
 
-------------------------------------------------------------------------------------------------------------------------------
-choose / make a branch
-git checkout -b (name of branch)
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Show the URL to repo is taken from`
+	git remote get-url origin
 
-------------------------------------------------------------------------------------------------------------------------------
-Delete branch (locally) 
-	git branch -d <branch>
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Choose / make a branch`
+	git checkout -b (name of branch)
 
-Delete branch that is not fully merged
-	git branch -D <branch>
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## Deleting `Branches`
+-	Local branch
+		
+		git branch -d <branch>
 
-Delete branch (remote)
-	git push <remote> --delete <branch>
-	Ex:
-		git push origin --delete latos
+-	Delete a branch that is not fully merged
+	
+		git branch -D <branch>
+
+-	Remote branch
+		
+		git push <remote> --delete <branch>
 
 
 
-------------------------------------------------------------------------------------------------------------------------------
-How can I remove a commit on GitHub?
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `How can I remove a commit on GitHub?`
 https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
 
-------------------------------------------------------------------------------------------------------------------------------
-Forcing a push on unrelated branches
-git pull origin branchname --allow-unrelated-histories
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Forcing a push on unrelated branches`
+	git pull origin branchname --allow-unrelated-histories
 
-------------------------------------------------------------------------------------------------------------------------------
-Force a push 
-git push origin <your_branch_name> --force
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Force a push` 
+	git push origin <your_branch_name> --force
 
-------------------------------------------------------------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
 
-Syncing a fork ------------------------------
-source:
+## `Syncing a fork` 
+_source_:
 https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
 
-The Setup
+The ***Setup***  
 Before you can sync, you need to add a remote that points to the upstream repository. You may have done this when you originally forked.
 Tip: Syncing your fork only updates your local copy of the repository; it does not update your repository on GitHub.
 
@@ -113,10 +115,10 @@ Tip: Syncing your fork only updates your local copy of the repository; it does n
 	upstream  https://github.com/otheruser/repo.git (fetch)
 	upstream  https://github.com/otheruser/repo.git (push)
 
-Syncing
+***Syncing***  
 There are two steps required to sync your repository with the upstream: first you must fetch from the remote, then you must merge the desired branch into your local branch.
 
-Fetching
+***Fetching***  
 Fetching from the remote repository will bring in its branches and their respective commits. These are stored in your local repository under special branches.
 
 	$ git fetch upstream
@@ -137,7 +139,7 @@ We now have the upstream's master branch stored in a local branch, upstream/mast
 	  remotes/origin/master   a422352 My local commit
 	  remotes/upstream/master 5fdff0f Some upstream commit
 
-Merging
+***Merging***
 Now that we have fetched the upstream repository, we want to merge its changes into our local branch. This will bring that branch into sync with the upstream, without losing our local changes.
 
 	$ git checkout master
@@ -164,36 +166,39 @@ If your local branch didn't have any unique commits, git will instead perform a 
  
 
 ------------------------------------------------------------------------------------------------------------------------------
-Install GIT in Ubuntu
-sudo apt install git-all
+## `Install GIT in Ubuntu`
+	
+	sudo apt install git-all
 
 
 ------------------------------------------------------------------------------------------------------------------------------
-Reset to a previous version of a branch
-git reset --hard <commit hash key>
+## `Reset to a previous version of a branch`
+
+	git reset --hard <commit hash_key>
 
 
 ------------------------------------------------------------------------------------------------------------------------------
 Rebase/merge/ pro & con
-GIT REBASE
-	pro	-	allwos for a cleaner commit history
-		-	provides a linear commit timeline
-	con	-	reduces traceability	
 
+	GIT REBASE
+		pro	-	allwos for a cleaner commit history
+			-	provides a linear commit timeline
+		con	-	reduces traceability	
 
-
-GIT MERGE
-	pro	-	preserves commit history
-	con	-	make the history messy	
+	GIT MERGE
+		pro	-	preserves commit history
+		con	-	make the history messy	
 
 
 ------------------------------------------------------------------------------------------------------------------------------
-GIT LOOSE OBJECT - https://stackoverflow.com/questions/4254389/git-corrupt-loose-objects
+## GIT LOOSE OBJECT
+_src_ : https://stackoverflow.com/questions/4254389/git-corrupt-loose-objects
 
 Your best bet is probably to simply re-clone from the remote repository (i.e., GitHub or other). 
 Unfortunately you will lose any unpushed commits and stashed changes, however your working copy should remain intact.
 
 First make a backup copy of your local files. Then do this from the root of your working tree:
+
 	rm -fr .git
 	git init
 	git remote add origin [your-git-remote-url]
