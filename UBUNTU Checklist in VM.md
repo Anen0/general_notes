@@ -203,10 +203,14 @@ https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also
 #### To list all local users you can use:
 	cut -d: -f1 /etc/passwd
 
+	OR
+
+	getent passwd
+
 #### To add a new user you can use:
 	sudo adduser new_username  
 
-	or
+	OR
 
 	sudo useradd new_username
 
@@ -238,6 +242,10 @@ https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also
 	or
 
 	usermod -a -G wheel user 
+
+#### List groups
+
+	getent group
 	
 # `If user is still not part of sudoers  try`:
 
