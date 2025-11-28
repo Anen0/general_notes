@@ -138,9 +138,15 @@ link: https://docs.docker.com/engine/install/ubuntu/
 
     `bash`  :   usage of the bash terminal
 
--   Run additional command in existing container
 
-        docker container exec -it
+-   Execute a command in a running container
+
+        docker container exec [OPTIONS] 
+
+    example:
+
+        docker container exec -it container_name bash 
+
 
 ### Start an existing container:
 
@@ -192,7 +198,7 @@ this exposes the port to the outside
 
 ===================================================================
 
-# `DNS in Docker`
+
 
 
 
