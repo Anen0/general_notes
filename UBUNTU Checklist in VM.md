@@ -332,7 +332,9 @@ _src_ : https://phoenixnap.com/kb/uninstall-packages-programs-ubuntu
 	sudo apt-get remove <app_name>
 
 
+## `Install an app in Ubuntu`:
 
+	sudo dpkg -i file.deb
 
 ## `Install from a specific directory`:
 
