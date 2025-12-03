@@ -1,10 +1,10 @@
 # `DOCKER CLI reference`
 
-https://docs.docker.com/reference/cli/docker/
+link : https://docs.docker.com/reference/cli/docker/
     
 
 ## Install Docker in Ubuntu Linux (20.04 LTS)
-link: https://docs.docker.com/engine/install/ubuntu/
+link : https://docs.docker.com/engine/install/ubuntu/
 
     <!-- Install using apt repository -->
     1)
@@ -49,7 +49,8 @@ link: https://docs.docker.com/engine/install/ubuntu/
         Verify that the installation is successful by running the hello-world image:
             -   sudo docker run hello-world
 
--------------------------------------------------------------------------------------------------
+<!-- ----------------------------------------------------------- -->
+
 
 ## `Docker file configuration`:
     FROM <OS><specific version>
@@ -70,23 +71,35 @@ link: https://docs.docker.com/engine/install/ubuntu/
     CMD <Run the application using gunicorn>
         ex: CMD ["gunicorn", "--bind", "0.0.0.0:5088", "wsgi:app"]
 
--------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------
+-------------------------------------------------------------- -->
 
+===================================================================
+# `IMAGES`
+-   __List of IMAGES currently running__
+        
+        docker images
 
+-   __Remove images:__
+    -   Normal way of removing:
 
--------------------------------------------------------------------------------------------------
+            docker image rm <options> <image_ID>
 
-## `List of IMAGES currently running`:
-    sudo docker images
+    -   Remove images (forcefully):
 
-### Remove images:
--   Normal way of removing:
+            docker image rm -f <image_ID>
+    
+    -   Remove just "dangling" images:
 
-        sudo docker image rm <options> <image_ID>
+            docker image prune
 
--   Remove images (forcefully):
+    -   Remove `ALL` images you're not using: 
 
-        sudo docker image rm -f <image_ID>
+            docker image prune -a
+
+    -   Remove everything you're not currently using:
+
+            docker system prune
 
 ===================================================================
 
@@ -122,6 +135,7 @@ link: https://docs.docker.com/engine/install/ubuntu/
     
     this is just to see if the containers are not reaching memory and network limits in a local environment  
     _Ctrl + C or Z to exit_
+
  
 ### Interacting inside the container:
 -   Start a container interactively
@@ -164,6 +178,77 @@ this exposes the port to the outside
 
     docker container port [container_id / container_name]
 
+### Remove a container after it stops running
+
+    docker container run --rm [container_id / container_name]
+
+`--rm`  :   Automatically remove the container and its associated anonymous volumes when it exits
+
+===================================================================
+
+#   `VOLUMES`
+-   __Bind mount a volume__  
+    this makes a `Named Volume`
+    Example:
+
+        docker  run  -v $(pwd):$(pwd) -w $(pwd) -i -t  ubuntu pwd
+
+    The example above mounts the current directory into the container at the same path using the `-v` flag, sets it as the working directory, and then runs the `pwd` command inside the container.  
+
+    As of Docker Engine version 23, you can use relative paths on the host.
+
+        docker  run  -v ./content:/content -w /content -i -t  ubuntu pwd
+    
+    The example above mounts the `content` directory in the current directory into the container at the `/content` path using the `-v` flag, sets it as the working directory, and then runs the `pwd` command inside the container.
+
+        docker run -v /doesnt/exist:/foo -w /foo -i -t ubuntu bash
+
+    When the host directory of a bind-mounted volume doesn't exist, Docker automatically creates this directory on the host for you. In the example above, Docker creates the `/doesnt/exist` folder before starting your container.
+
+-   __Upgrading/changing versions of images__
+    Im using Postgres for this example. Lets say i have 2 versions of Postgres
+
+        docker volume create psql
+        docker run -d --name psql1 -e POSTGRES_PASSWORD=mypassword -v psql:/var/lib/postgresql/data postgres:15.1
+        docker logs psql1
+        docker stop psql1
+        docker run -d --name psql2 -e POSTGRES_PASSWORD=mypassword -v psql:/var/lib/postgresql/data postgres:15.2
+        docker logs psql2
+        docker stop psql2
+
+
+
+===================================================================
+
+# `Shell Differences for Path Expansion`
+With Docker CLI, you can always use a full file path on any OS, 
+but often see people use a "parameter expansion" like `$(pwd)` which means ___"print working directory"___.
+
+___Note___ :  Each shell may do this differently, so here's a cheat sheet for which OS and Shell your using.  
+This isn't a Docker thing, it's a Shell thing.
+
+-   for PowerShell  :   
+        
+        ${pwd}
+
+-   for Command Prompt : 
+
+        %cd%
+
+-   Linux/macOS bash, sh, zsh, and Windows Docker Toolbox Quickstart Terminal : 
+
+        $(pwd)
+
+    ___Note___ : if you have spaces in your path, you'll usually need to quote the whole path in the docker command.
+
+
+
+===================================================================
+
+#   `Over all monitoring`
+-   Disk space usage
+
+        docker system df
 
 ===================================================================
 
