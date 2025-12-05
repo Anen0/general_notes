@@ -213,14 +213,18 @@ this exposes the port to the outside
 
     When the host directory of a bind-mounted volume doesn't exist, Docker automatically creates this directory on the host for you. In the example above, Docker creates the `/doesnt/exist` folder before starting your container.
 
--   __Upgrading/changing versions of images__
+-   __Upgrading/changing versions of images__  
     Im using Postgres for this example. Lets say i have 2 versions of Postgres
 
         docker volume create psql
+    >
         docker run -d --name psql1 -e POSTGRES_PASSWORD=mypassword -v psql:/var/lib/postgresql/data postgres:15.1
+
         docker logs psql1
         docker stop psql1
+    >
         docker run -d --name psql2 -e POSTGRES_PASSWORD=mypassword -v psql:/var/lib/postgresql/data postgres:15.2
+
         docker logs psql2
         docker stop psql2
 
