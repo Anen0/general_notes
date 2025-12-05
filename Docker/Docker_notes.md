@@ -105,20 +105,28 @@ link : https://docs.docker.com/engine/install/ubuntu/
 
 # `CONTIANERS`
 
-### Build a container:
-    sudo docker build -t <tag name> <PATH>
->
+-   Build a container:
+        
+        docker build -t <tag name> <PATH>
+    
     example:  
-    sudo docker build -t tagname .      --->    the "." is the address of the current directory
+    
+        docker build -t tagname . 
 
-### List of all CONTAINERS:
-    sudo docker ps -a
+    The `.` is the address of the current directory  
 
-### Stop a currently running container:
-    docker stop <container_ID>
 
-### Remove the container:
-    sudo docker rm <container_ID>
+-   List of all CONTAINERS:
+        
+        docker ps -a
+
+-   Stop a currently running container:
+
+        docker stop <container_ID>
+
+-   Remove the container:
+        
+        docker rm <container_ID>
 
 ### Monitoring containers:
 -   Process list of a container
