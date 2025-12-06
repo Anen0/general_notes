@@ -829,6 +829,8 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-u
 	delete rules by name:
 		sudo ufw delete allow "(name_inclosed_in_double_quotes)"
 
+	reload rules:
+		sudo ufw reload
 
 
 -------------------------------------------------------------------------------------------------------------------------
