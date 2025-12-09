@@ -394,6 +394,16 @@ _set up_ :
 
 	ssh-keygen
 
+	or
+
+	ssh-keygen -b 4096
+
+## Remove a SSH key
+
+	ssh-keygen -f "[path]/.ssh/known_hosts" -R "[ip_address]"
+
+
+
 
 
 ## `Set hostname / check Linux version`
@@ -419,15 +429,41 @@ _set up_ :
 type 'ssh-keygen -b 4096' in host system
 
 	now to copy 'id_rsa' from host system to server (ignore the quotes)
-		- scp ~/.ssh/id_rsa.pub server_name@0.0.0.0:exact_location
+		- scp ~/.ssh/id_rsa.pub server_name@0.0.0.0:[exact_location]
+
+		example:
+			scp ~/.ssh/id_rsa.pub coreyms@123.22.22.155:~/.ssh/authorized_keys
+
 
 OR use ssh-copy-id
 The syntax is:
 	ssh-copy-id 'username'@'remote_host' 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04
 
+Then change the permissions:
+
+	chmod 700 ~/.ssh/
+	chmod 600 ~/.ssh/*
 
 
+
+__Note__ : If shows error _"failed to add the host to the list of known host ubuntu ssh"_  
+this could be caused by a few things such as:  
+
+-	this could be a Host key mismatch  
+	_Solution_ : Remove the old entry for that host from your `~/.ssh/known_hosts` file
+
+		ssh-keygen -R [hostname]@[ip_address]
+
+-	could be a permission issue, The `~/.ssh` directory or the `known_hosts` file may have incorrect permissions, preventing SSH from writing to it.  
+	_Solution_	:  Ensure the `~/.ssh` directory and its contents are owned by your user and have appropriate permissions.
+
+		chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/known_hosts
+	
+	You may also need to adjust ownership if it's incorrect:
+
+		sudo chown your_username:your_username ~/.ssh -R
 
 
 
