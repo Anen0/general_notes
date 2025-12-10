@@ -197,6 +197,11 @@ this exposes the port to the outside
 #   `VOLUMES`
 -   __Bind mount a volume__  
     this makes a `Named Volume`
+
+        docker container run --name [container_name] -v [volume_name]:[volume_location] [image]
+    >
+        docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql 
+
     Example:
 
         docker  run  -v $(pwd):$(pwd) -w $(pwd) -i -t  ubuntu pwd

@@ -445,6 +445,11 @@ Then change the permissions:
 	chmod 700 ~/.ssh/
 	chmod 600 ~/.ssh/*
 
+	sudo chmod 700 ~/.ssh/
+	sudo chmod 600 ~/.ssh/*
+	sudo chown -R ${USER} ~/.ssh/
+	sudo chgrp -R ${USER} ~/.ssh/
+
 
 
 __Note__ : If shows error _"failed to add the host to the list of known host ubuntu ssh"_  
