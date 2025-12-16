@@ -76,6 +76,22 @@ If you have a local clone, you can update it by running the following commands.
 		git push <remote> --delete <branch>
 
 
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## Exclude file or directory with `.gitignore`
+-	Add .gitignore
+		
+	example :
+
+		__pycache__/
+
+-	If file/directory already tracked (already in GitHub)
+
+		git rm -r --cache __pycache__
+
+	-	`git rm -r` :	Removes the specified directory and its contents recursively
+	-	`--cached` 	:	Specifies that the removal should only happen in the Git index (the repository history), not from your local filesystem 
+
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 ## `How can I remove a commit on GitHub?`
@@ -165,20 +181,21 @@ If your local branch didn't have any unique commits, git will instead perform a 
 	 1 file changed, 3 insertions(+), 2 deletions(-)
  
 
-------------------------------------------------------------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------------------------------------------------------------   -->
+
 ## `Install GIT in Ubuntu`
 	
 	sudo apt install git-all
 
 
-------------------------------------------------------------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 ## `Reset to a previous version of a branch`
 
 	git reset --hard <commit hash_key>
 
 
-------------------------------------------------------------------------------------------------------------------------------
-Rebase/merge/ pro & con
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `Rebase/merge/ pro & con`
 
 	GIT REBASE
 		pro	-	allwos for a cleaner commit history
@@ -190,8 +207,8 @@ Rebase/merge/ pro & con
 		con	-	make the history messy	
 
 
-------------------------------------------------------------------------------------------------------------------------------
-## GIT LOOSE OBJECT
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `GIT LOOSE OBJECT`
 _src_ : https://stackoverflow.com/questions/4254389/git-corrupt-loose-objects
 
 Your best bet is probably to simply re-clone from the remote repository (i.e., GitHub or other). 

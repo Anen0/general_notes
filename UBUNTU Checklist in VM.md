@@ -514,7 +514,7 @@ https://www.codewithharry.com/blogpost/flask-app-deploy-using-gunicorn-nginx/
 
 **Add desktop environment for ubuntu server**  
 https://www.makeuseof.com/install-desktop-environment-gui-ubuntu-server/
-
+s
 
 **Deploy Flask App on VPS**  
 https://www.askpython.com/python-modules/flask/deploy-flask-app-on-vps - apache
@@ -661,7 +661,7 @@ The command consists of the following elements:
 	show active connections:
 	sudo netstat -tulpn
 
-*source*	:	https://www.tecmint.com/20-netstat-commands-for-linux-network-management/
+*__source__*	:	https://www.tecmint.com/20-netstat-commands-for-linux-network-management/
 https://www.geeksforgeeks.org/netstat-command-linux/
 
 
@@ -696,7 +696,7 @@ MD5 has 128-bit hashes, so provide 16 for "MD5-like" tokens.
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 ## REDIS server
 
-Install on Ubuntu/Debian
+*__Install on Ubuntu/Debian__*
 
 	>	curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
 
@@ -705,17 +705,17 @@ Install on Ubuntu/Debian
 	>	sudo apt-get update
 	>	sudo apt-get install redis
 
-Start redis-server
+*__Start redis-server__*
 
 if yur having trouble starting:  
 	https://stackoverflow.com/questions/42857551/could-not-connect-to-redis-at-127-0-0-16379-connection-refused-with-homebrew
 
-Securing Redis  
+*__Securing Redis__*  
 	https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04
 	https://redis.io/docs/management/security/
 
 
--------------------------------------------------------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------------------------------------------------------- -->
 ## INSTALL CURL - cant install curl?
 
 https://stackoverflow.com/questions/22754649/cant-install-pycurl-with-pip
