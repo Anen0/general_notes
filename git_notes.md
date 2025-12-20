@@ -91,6 +91,10 @@ If you have a local clone, you can update it by running the following commands.
 	-	`git rm -r` :	Removes the specified directory and its contents recursively
 	-	`--cached` 	:	Specifies that the removal should only happen in the Git index (the repository history), not from your local filesystem 
 
+	another example to ignore all of `__pycache__`:
+
+		**/__pycache__/
+
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->

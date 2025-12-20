@@ -628,7 +628,11 @@ format
 		sudo apt-get install virtualbox-guest-utils  
 		sudo adduser $(whoami) vboxsf  
 		
-	-restart guest for it to take effect  
+	- restart guest for it to take effect  
+
+	if errors in running guess additions, could be errors in the Dynamic Kernel Module Supportt (DKMS)
+		
+		sudo apt install --reinstall linux-headers-$(uname -r) virtualbox-dkms build-essential
 
 
 
@@ -694,7 +698,7 @@ MD5 has 128-bit hashes, so provide 16 for "MD5-like" tokens.
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-## REDIS server
+## `REDIS server`
 
 *__Install on Ubuntu/Debian__*
 
@@ -716,7 +720,7 @@ if yur having trouble starting:
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
-## INSTALL CURL - cant install curl?
+## `INSTALL CURL` - cant install curl?
 
 https://stackoverflow.com/questions/22754649/cant-install-pycurl-with-pip
 
@@ -735,13 +739,13 @@ _basic CURL install_
 		
 
 <!-- ------------------------------------------------------------ -->
-## CURL Coverter
+## `CURL Coverter`
 https://curlconverter.com/python/
 
 ------------------------------------------------------------
 
 
-## Install Let's Encrypt SSL on Ubuntu with Apache or Nginx
+## `Install Let's Encrypt SSL on Ubuntu with Apache or Nginx`
 https://www.vultr.com/docs/setup-letsencrypt-on-linux/
 
 	--apache: Use the Apache web server
@@ -784,7 +788,7 @@ https://www.vultr.com/docs/setup-letsencrypt-on-linux/
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
-## CHMOD persmission codes
+## `CHMOD persmission codes`
 
 The three digits of the chmod code set permissions for these groups in this order:
 -	1. Owner (you)
@@ -834,7 +838,7 @@ https://linuxhint.com/fix-initramfs-ubuntu/
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
-## UFW - simple firewall  
+## `UFW - simple firewall` 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu
 	check the status of UFW: 
 		sudo ufw status verbose 
@@ -875,7 +879,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-u
 
 
 -------------------------------------------------------------------------------------------------------------------------
-## OPENSSL: Encrypt / Decrypt	a string for password
+## `OPENSSL: Encrypt / Decrypt	a string for password`
 
 Encrypt:
 
@@ -896,7 +900,7 @@ Command definitions
 
 
 -------------------------------------------------------------------------------------------------------------------------
-## TIMEZONE:
+## `TIMEZONE`:
   
 modify timzones thru cmd - ubuntu 20.04  
 https://www.geeksforgeeks.org/how-to-set-or-change-timezone-on-ubuntu-20-04/
@@ -922,7 +926,7 @@ https://www.geeksforgeeks.org/how-to-set-or-change-timezone-on-ubuntu-20-04/
 
 
 -------------------------------------------------------------------------------------------------------------------------
-## Chaning Ports for Apache
+## `Chaning Ports for Apache`
 
 	sudo nano /etc/apache2/ports.conf
 	change "Listen 80"
@@ -939,7 +943,7 @@ https://www.geeksforgeeks.org/how-to-set-or-change-timezone-on-ubuntu-20-04/
 
 
 -------------------------------------------------------------------------------------------------------------------------
-## Monitor service JOURNALCTL
+## `Monitor service JOURNALCTL`
 
 To actively follow the logs as they are being written, you can use the ` -f ` flag
 
@@ -951,7 +955,7 @@ _more info_	:  https://www.digitalocean.com/community/tutorials/how-to-use-journ
 
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
 
-## Read files from the terminal
+## `Read files from the terminal`
 
 	cat /var/log/file.txt	->	read the content of short files
 	less /var/log/file.txt	->	read the content of long files in an interactive way
