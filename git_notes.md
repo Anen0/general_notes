@@ -230,6 +230,21 @@ First make a backup copy of your local files. Then do this from the root of your
 Then commit any changed files as necessary.
 
 
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+## `Missing credentials when logging in VSCode terminal`:
+src : https://stackoverflow.com/questions/62860280/git-push-missing-or-invalid-credentials-fatal-authentication-failed-for-http
+
+You are trying to use git from a terminal in vscode. The problem comes from the authentication handler of vscode. To solve the problem:
+
+-	Open vscode File > Preferences > Settings
+-	Search for git.terminalAuthentication
+-	Uncheck the option
+
+You have to re-open the terminal to make it work.
+
+
 
 
 
