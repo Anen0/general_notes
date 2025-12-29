@@ -298,6 +298,10 @@ This isn't a Docker thing, it's a Shell thing.
 
         docker network disconnect [options] [network_name] [container_id / container_name to disconnect]
 
+-   Remove one or more networks
+
+        docker network rm my-network
+
 ===================================================================
 
 
