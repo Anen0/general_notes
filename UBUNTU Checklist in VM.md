@@ -256,6 +256,10 @@ Open file:
 	sudo su  
 	nano /etc/sudoers
 
+	or 
+
+	su -
+
 Then add the user below admin user like below syntax.  
 
 	user_name ALL=(ALL)  ALL  
@@ -633,6 +637,11 @@ format
 	if errors in running guess additions, could be errors in the Dynamic Kernel Module Supportt (DKMS)
 		
 		sudo apt install --reinstall linux-headers-$(uname -r) virtualbox-dkms build-essential
+
+	if in the guest addition is accessed throu VirtualBox's Devices menu: 
+		-	got to the folder
+		-	sudo ./VboxLinuxAdditions.run
+		-	sudo reboot
 
 
 
