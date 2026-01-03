@@ -978,6 +978,8 @@ to view only a number lines
 -------------------------------------------------------------------------------------------------------------------------
 
 
+## `PYENV - switch multiple versions of Python`
 
+https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
 
 
