@@ -11,6 +11,10 @@
 - (env name)\Scripts\deactivate.bat
 
 
+#### Set up a virtual env with a specific python version (ALTERNATIVE)
+
+- python3 -m venv "my_env_name"
+
 ## Install PIP in windows:
   - install "get-pip.py" from  https://bootstrap.pypa.io/get-pip.py
   - python get-pip.py
