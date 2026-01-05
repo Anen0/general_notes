@@ -18,7 +18,11 @@
 ## Install PIP in windows:
   - install "get-pip.py" from  https://bootstrap.pypa.io/get-pip.py
   - python get-pip.py
-  
+
+  ### `Or an alternative work around` :
+
+    - py -m pip
+
 
 
   Python3
