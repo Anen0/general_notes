@@ -23,6 +23,13 @@
 
     - py -m pip
 
+## Activate Virtual Environment in Windows:
+
+    py -m venv [env_name]
+
+  
+
+
 
 
   Python3
