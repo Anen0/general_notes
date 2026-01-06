@@ -107,13 +107,15 @@ link : https://docs.docker.com/engine/install/ubuntu/
 
 -   Build a container:
         
-        docker build -t <tag name> <PATH>
+        docker buildx build -t <tag name> <PATH>
     
     example:  
     
-        docker build -t tagname . 
+        docker buildx build -t tagname . 
 
     The `.` is the address of the current directory  
+
+
 
 
 -   List of all CONTAINERS:
