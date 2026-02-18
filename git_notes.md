@@ -193,9 +193,43 @@ If your local branch didn't have any unique commits, git will instead perform a 
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-## `Reset to a previous version of a branch`
+## `RESET to a previous version of a branch`
 
 	git reset --hard <commit hash_key>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+## `REVERT to a previous commit`
+	
+	git revert <commit hash_key>
+
+_If you get the an error like:_
+
+	commit <hash> is a merge but no -m option was given
+
+
+this means merge commit has more than one parent. 
+Git doesn’t know which side of the merge should be considered the “main” history.
+	
+_To see the parents of that merge commit:_
+
+	git show --no-patch --pretty=raw <commit_hash>
+
+you'll see something like:
+
+	commit a297 
+	tree f18f 
+	parent b361 	<----   parent #1
+	parent b36c		<----	parent #2
+	....
+
+_choose the mainline parent:_
+
+	git revert -m 1 <commit hash>
+	or
+	git revert -m 1 <commit hash>
+
+
+
 
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
