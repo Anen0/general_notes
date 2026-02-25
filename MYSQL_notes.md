@@ -274,6 +274,10 @@ https://phoenixnap.com/kb/how-to-backup-restore-a-mysql-database
 
 	CREATE INDEX index_name ON table_name (col1, col2, ...);
 
+>	create UNIQUE index:
+
+	CREATE UNIQUE INDEX index_name ON table_name (col1, col2, ...);
+
 >	drop index 
 
 	ALTER TABLE table_name DROP INDEX index_name;
