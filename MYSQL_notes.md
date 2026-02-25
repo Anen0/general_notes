@@ -265,7 +265,15 @@ https://phoenixnap.com/kb/how-to-backup-restore-a-mysql-database
 
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
 ## `MYSQL INDEX`
-show which columns are indexed
+
+>	show which columns are indexed:
 
 	SHOW INDEXES FROM <table_name>; 
 
+>	create index:
+
+	CREATE INDEX index_name ON table_name (col1, col2, ...);
+
+>	drop index 
+
+	ALTER TABLE table_name DROP INDEX index_name;
