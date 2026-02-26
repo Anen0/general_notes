@@ -406,6 +406,10 @@ _set up_ :
 
 	ssh-keygen -f "[path]/.ssh/known_hosts" -R "[ip_address]"
 
+## Copy SSH key
+
+	ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.0.0.0
+
 
 
 
