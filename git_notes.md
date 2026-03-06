@@ -281,4 +281,53 @@ You have to re-open the terminal to make it work.
 
 
 
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
+
+## `SSH key`
+_link_ : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+_Generate keygen :_
+
+	ssh-keygen -t ed25519 -C "your_email@example.com"
+
+_Start the SSH-agent :_
+
+	eval "$(ssh-agent -s)"
+
+_Add the private key to the SSH-agent :_
+
+	ssh-add ~/.ssh/id_rsa
+
+_Add the public key to your GitHub account :_
+
+	1.) copy the contents of the public key
+	on GitHub
+	2) In the upper-right corner of any page on GitHub, click your profile picture, then click Settings
+	3) In the "Access" section of the sidebar, click SSH and GPG keys
+	4) Click New SSH key or Add SSH key
+
+_then test the connection :_
+
+	ssh -T git@github.com
+
+__If you encounter error: Permission denied (publickey)?__
+
+_link_ : https://www.geeksforgeeks.org/git/how-to-fix-error-permission-denied-publickey/
+
+Check if:
+- No SSH key is associated with your account. (generate a new pair)
+- The SSH key is not added to the SSH agent.
+- The SSH key is not added to your Git hosting service (e.g., GitHub, GitLab).
+- Incorrect SSH configuration.
+
+_Add Your SSH Key to Your Git Hosting Service :_
+
+	for MacOS:
+	pbcopy < ~/.ssh/id_rsa.pub
+> 
+	for Linux:
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+>
+	for Windows (Git Bash):
+	cat ~/.ssh/id_rsa.pub | clip

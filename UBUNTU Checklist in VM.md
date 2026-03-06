@@ -410,6 +410,9 @@ _set up_ :
 
 	ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.0.0.0
 
+## Check existing SSH keys
+
+	ls -al ~/.ssh
 
 
 
