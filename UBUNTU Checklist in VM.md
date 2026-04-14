@@ -246,6 +246,20 @@ https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also
 #### List groups
 
 	getent group
+
+#### List users in the SUDO list
+
+	getent group sudo
+
+#### Check what Privileges a User has
+
+	sudo -l -U (username)
+
+	or 
+
+	sudo -nv
+
+
 	
 # `If user is still not part of sudoers  try`:
 
