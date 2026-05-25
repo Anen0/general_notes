@@ -1004,3 +1004,14 @@ to view only a number lines
 https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
 
 
+-------------------------------------------------------------------------------------------------------------------------
+
+Ubuntu VM - 
+How to Increase Size of Disk Partition in Ubuntu
+	https://woshub.com/increase-partition-size-ubuntu/
+
+How to Enlarge a Virtual Machine's Disk in VirtualBox or VMware
+	https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/
+
+Expanding Disk Partitions in Ubuntu: A Comprehensive Guide
+	https://linuxvox.com/blog/ubuntu-expand-disk-partition/
