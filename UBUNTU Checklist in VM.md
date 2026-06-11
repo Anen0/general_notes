@@ -1006,7 +1006,7 @@ https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
 
 -------------------------------------------------------------------------------------------------------------------------
 
-Ubuntu VM - 
+## Ubuntu VM - 
 How to Increase Size of Disk Partition in Ubuntu
 	https://woshub.com/increase-partition-size-ubuntu/
 
@@ -1015,3 +1015,30 @@ How to Enlarge a Virtual Machine's Disk in VirtualBox or VMware
 
 Expanding Disk Partitions in Ubuntu: A Comprehensive Guide
 	https://linuxvox.com/blog/ubuntu-expand-disk-partition/
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+## `Connect Ubuntu VM from Windows host (VirtualBox)`
+on the ubuntu VM:
+
+	sudo apt update
+	sudo apt install openssh-server
+	sudo systemctl enable --now ssh
+	sudo systemctl status ssh
+
+on VirtualBox toolbar, go to:
+
+-	Devices > Network > Network Settings...
+-	change the value of "Attached to" into "Bridged Adapter" (by default its set to NAT) 
+-	check IP address of Ubuntu with the command: 
+	
+	>	ip a 
+
+
+when all done:
+
+-	open CMD in Windows
+-	type: 
+	> ssh [username]@[ip add]
