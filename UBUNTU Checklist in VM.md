@@ -1006,8 +1006,8 @@ https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
 
 -------------------------------------------------------------------------------------------------------------------------
 
-## Ubuntu VM - 
-How to Increase Size of Disk Partition in Ubuntu
+## Ubuntu VM - How to Increase Size of Disk Partition in Ubuntu
+
 	https://woshub.com/increase-partition-size-ubuntu/
 
 How to Enlarge a Virtual Machine's Disk in VirtualBox or VMware
@@ -1015,6 +1015,49 @@ How to Enlarge a Virtual Machine's Disk in VirtualBox or VMware
 
 Expanding Disk Partitions in Ubuntu: A Comprehensive Guide
 	https://linuxvox.com/blog/ubuntu-expand-disk-partition/
+
+quick rundone:
+
+On Windows side:
+1. Shut down the Ubuntu VM completely.
+2. Open Command Prompt on Windows.	
+
+	- cd to the VirtualBox install folder
+		
+			cd "C:\Program Files\Oracle\VirtualBox"
+
+	- check the disk location:
+
+			VBoxManage list hdds
+
+	- Expand the disk:
+
+			VBoxManage modifymedium disk "D:\VMs\Ubuntu\Ubuntu.vdi" --resize 51200
+
+3. Verify in the Ubuntu VM
+	- boot Ubuntu
+	- Run
+			
+			lsblk
+
+	- you may see something like this:
+
+			sda      50G
+			├─sda1    1G
+			└─sda2   20G
+
+4. easiest mehtod: use GParted
+		
+		sudo apt update
+		sudo apt install gparted -y
+	
+	then
+
+		sudo gparted
+
+
+	
+
 
 
 -------------------------------------------------------------------------------------------------------------------------
