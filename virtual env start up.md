@@ -406,4 +406,8 @@ or if you have permission issue, run:
     
     python -m ensurepip --user
 
-  
+------------------------------------------------------------------------------------------------------------
+
+installing multiple versions of python and switching between those versions
+pyenv             - https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
+pyenv-virtualenv  - https://github.com/pyenv/pyenv-virtualenv 
