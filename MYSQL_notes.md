@@ -110,8 +110,14 @@ values on the SELECT tag:
 	User_attributes 
 
 
+
+## `show ‘User’ priviledges`
+	show grants for 'root'@'localhost';
+
+
 ## `reduce the amount of ‘user’ information shown`
 	desc mysql.user;
+
 
 ## `connect to mysql server with password`
 	mysql -u root -p
@@ -143,7 +149,7 @@ values on the SELECT tag:
 
 >	Note 1: It is better to use the full path of the SQL file file.sql.  
 >	Note 2: Use -R and --triggers with mysqldump to keep the routines and triggers of the original database. They are not copied by default.  
->	Note 3 You may have to create the (empty) database from MySQL if it doesn't exist already and the exported SQL doesn't contain `CREATE DATABASE (exported with --no-create-db or -n option)` before you can import it.
+>	Note 3: You may have to create the (empty) database from MySQL if it doesn't exist already and the exported SQL doesn't contain `CREATE DATABASE (exported with --no-create-db or -n option)` before you can import it.
 
 if you are ***logged in*** mysql already:
 
@@ -166,6 +172,9 @@ if not: exit and login to mysql with this command
 
 	mysql --local_infile=1 -u <root> -p DB_name
 
+## `IMPORT MULTIPLE DATBASES`
+	
+	mysql -u root -p < database-file.sql
 
 
 ## `EXPORT data from database`:

@@ -311,6 +311,20 @@ _then test the connection :_
 
 	ssh -T git@github.com
 
+_Additional : Convert your existing repo_
+
+	git remote set-url origin git@github.com:username/repo.git
+
+verify:
+
+	git remote -v
+
+then:
+
+	git push
+
+No username or password prompts should appear
+
 __If you encounter error: Permission denied (publickey)?__
 
 _link_ : https://www.geeksforgeeks.org/git/how-to-fix-error-permission-denied-publickey/
