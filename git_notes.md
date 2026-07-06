@@ -301,8 +301,7 @@ _Add the private key to the SSH-agent :_
 
 _Add the public key to your GitHub account :_
 
-	1.) copy the contents of the public key
-	on GitHub
+	1.) copy the contents of the public key on GitHub
 	2) In the upper-right corner of any page on GitHub, click your profile picture, then click Settings
 	3) In the "Access" section of the sidebar, click SSH and GPG keys
 	4) Click New SSH key or Add SSH key
