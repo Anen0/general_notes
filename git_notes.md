@@ -284,7 +284,7 @@ You have to re-open the terminal to make it work.
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 
 
-## `SSH key`
+## `SSH into a Git repo`
 _link_ : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 _link 2_ : https://dev.to/bryanprimus/using-ssh-to-connect-local-git-to-remote-repositories-501d
 

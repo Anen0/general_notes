@@ -220,6 +220,11 @@ https://askubuntu.com/questions/410244/is-there-a-command-to-list-all-users-also
 #### Then you may want to delete the home directory for the deleted user account :
 	sudo rm -r /home/username
 
+OR
+
+#### delete user and that user's home directory:
+	sudo userdel -r username
+
 #### To modify the username of a user:
 	usermod -l new_username old_username
 
