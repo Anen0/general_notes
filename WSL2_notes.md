@@ -1,4 +1,12 @@
-### `Move WSL2 location`
+## `Installing WSL2 on Windows`
+
+    https://learn.microsoft.com/en-us/windows/wsl/install
+
+for older systems
+
+    https://learn.microsoft.com/en-us/windows/wsl/install-manual
+
+## `Move WSL2 location`
 
 1. Open Powershell (run as admin) and list the distros installed:
 
@@ -20,7 +28,7 @@
 
 5. quickly check if there is still instances of any distro with:
 
-        wsl
+        wslhttps://learn.microsoft.com/en-us/windows/wsl/install-manual
 
 6. import the distro from the new location:
 
@@ -31,4 +39,34 @@
 7. once done check the installed distro:
 
         wsl -d <Distro-name> 
----
+
+
+## `Linux User accounts`
+
+`Change the Default User (Recommended)`
+
+1. open WSL terminal
+2. Open or Create the config file with root privileges:
+
+        sudo nano /etc/wsl.conf
+    
+    add these:
+
+        [user]
+        default=your_username
+
+3. close terminal and open PowerShell/CMD and restart to apply changes:
+
+        wsl --shutdown 
+
+`Change into a specific User`
+
+If you only need to run a session as a different user without modifying your default settings, pass the user flag from PowerShell/CMD
+
+1. launch default distro:
+
+        wsl -u <username>
+
+2. launch a specific distro:
+
+        wsl -d <Distro-name> -u <username>
