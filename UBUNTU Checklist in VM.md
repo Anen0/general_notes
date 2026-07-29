@@ -178,6 +178,10 @@ https://stackoverflow.com/questions/66314858/how-we-can-see-all-running-services
 	
 	systemctl list-units
 
+or
+
+	systemctl list-unit-files | grep enabled
+
 ***SERVICE***  
 command will list all services on your Ubuntu Server (both running services and not running services):
 	
