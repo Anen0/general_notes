@@ -456,6 +456,11 @@ _set up_ :
 	lshw -short		-	Presents the output of lshw in a more condensed table format
 	cat /etc/os-release		-	Shows the specific name and version of your Ubuntu OS
 
+	neofetch		-	system specs of the PC
+		- sudo apt update
+		- sudo apt install neofetch
+		- neofetch
+
 
 
 ## `Generate SSH key`
