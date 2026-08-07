@@ -425,6 +425,11 @@ _set up_ :
 
 	ssh-keygen -b 4096
 
+	or 
+
+	ssh-keygen -t ed25519 -C "email@example.com"
+
+
 ## Remove a SSH key
 
 	ssh-keygen -f "[path]/.ssh/known_hosts" -R "[ip_address]"
