@@ -889,6 +889,10 @@ https://linuxhint.com/fix-initramfs-ubuntu/
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
 ## `UFW - simple firewall` 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu
+
+	Install:
+		sudo apt install ufw
+
 	check the status of UFW: 
 		sudo ufw status verbose 
 		or
@@ -1104,3 +1108,20 @@ when all done:
 -	open CMD in Windows
 -	type: 
 	> ssh [username]@[ip add]
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+## `Check Disk / hard drive space`
+Shows total, used, and available space for all mounted drives in an easy-to-read format
+
+	df -h
+
+Shows the size of each folder inside your current directory
+
+	du -sh *
+
+Or try "System Monitor"
+
+sudo apt install ncdu
