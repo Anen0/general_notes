@@ -1123,5 +1123,3 @@ Shows the size of each folder inside your current directory
 	du -sh *
 
 Or try "System Monitor"
-
-sudo apt install ncdu
