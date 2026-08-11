@@ -886,6 +886,11 @@ https://linuxhint.com/fix-initramfs-ubuntu/
 3) type reboot, then type exit - ubuntu will restart afterwards
 
 
+## Ubuntu Stats
+
+- sudo apt install htop
+- htop
+
 <!-- ------------------------------------------------------------------------------------------------------------------------- -->
 ## `UFW - simple firewall` 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu
