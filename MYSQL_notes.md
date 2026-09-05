@@ -119,6 +119,10 @@ values on the SELECT tag:
 	desc mysql.user;
 
 
+## `rename mysql user`
+	RENAME USER 'old_username'@'host' TO 'new_username'@'host';
+
+
 ## `connect to mysql server with password`
 	mysql -u root -p
 
