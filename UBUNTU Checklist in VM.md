@@ -711,8 +711,15 @@ The command consists of the following elements:
 
 ## `NETSTAT commands`
 
+	install:
+	sudo apt install net-tools
+
 	show active connections:
 	sudo netstat -tulpn
+
+	or
+
+	sudo netstat -lnp | grep "service"
 
 *__source__*	:	https://www.tecmint.com/20-netstat-commands-for-linux-network-management/
 https://www.geeksforgeeks.org/netstat-command-linux/
@@ -765,6 +772,7 @@ if yur having trouble starting:
 
 *__Securing Redis__*  
 	https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04
+	https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-22-04
 	https://redis.io/docs/management/security/
 
 
