@@ -1042,6 +1042,36 @@ https://github.com/pyenv/pyenv?tab=readme-ov-file#c-restart-your-shell
 
 -------------------------------------------------------------------------------------------------------------------------
 
+## `Kill a process`
+
+look for the process ID with:
+
+	ps aux | grep <the -query>
+>
+it will outpupt the list of processes containing the query, to kill it:
+
+	sudo kill <PID>
+>
+
+## `Kill a process`	
+To forcefully kill a process running on a specific port in Linux (commonly used for stuck Flask apps on port 5000), run:
+
+	sudo fuser -k <port_number>
+	
+	ex:
+	sudo fuser -k 5000/tcp
+
+Replace 5000 in the command with your specific port number
+
+then check if the port has been freed, if output it empty the port is free
+>
+	sudo lsof -i:5000
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
 ## Ubuntu VM - How to Increase Size of Disk Partition in Ubuntu
 
 	https://woshub.com/increase-partition-size-ubuntu/
