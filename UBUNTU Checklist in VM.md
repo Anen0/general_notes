@@ -268,6 +268,29 @@ OR
 
 	sudo -nv
 
+#### Change username, user group account details, home directory, ID
+
+	exec sudo -i
+	killall -u [oldname]
+	id [oldname]
+	usermod -l [newname] [oldname]
+	groupmod -n [newname] [oldname]
+	usermod -d /home/[newname] -m [newname]
+	usermod -c "[full name (new)]" [newname]
+	id [newname]
+
+example:
+
+	sudo -i
+	killall -u belaje
+	id belaje
+	uid=1000(belaje) gid=1000(belaje) groups=1000(belaje),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),109(lpadmin),127(sambashare)
+	usermod -l  balaja belaje
+	groupmod -n balaja belaje
+	usermod -d /home/balaja -m  balaja
+	usermod -c "Bala Jagannathan" balaja
+	id balaja
+
 
 	
 # `If user is still not part of sudoers  try`:
