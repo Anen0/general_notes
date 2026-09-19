@@ -1076,7 +1076,7 @@ it will outpupt the list of processes containing the query, to kill it:
 	sudo kill <PID>
 >
 
-## `Kill a process`	
+## `Kill a process (by force)`	
 To forcefully kill a process running on a specific port in Linux (commonly used for stuck Flask apps on port 5000), run:
 
 	sudo fuser -k <port_number>
@@ -1189,3 +1189,103 @@ Shows the size of each folder inside your current directory
 	du -sh *
 
 Or try "System Monitor"
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+## `Ubuntu-Server : connect to Wifi` : 
+
+Check the available network devices (LAN, Wifi dongle)
+
+	ip link show
+
+
+Look for your wireless device name (examples: wlan0, wlp2s0, or wlo1).
+
+
+_Source_ : https://dev.to/pratyushudhani/how-to-connect-headless-linux-server-to-internet-without-network-manager-j16
+
+>
+In a headless installation you can connect to wifi networks using _network-manager_, _iwctl_ etc. But wait first you need to install these, and for that you need internet. 
+
+There are 2 method in this guide, `Netplan` and `wpa_supplicant`
+
+Method #1: _`Netplan`_ (I went with this one)
+>
+STEP 1
+
+Edit Netplan configuration file or create a new one:
+
+	sudo nano /etc/netplan/01-netcfg.yaml
+>
+its contents should look like this:
+
+	network:
+		version: 2
+		renderer: networkd
+		wifis:
+			wlp2s0:  			# Replace with your actual wireless interface name
+			dhcp4: true
+			access-points:
+				"SSID":			# SSID is the name of you wifi
+				auth:
+					key-management: "psk"
+					password: "password"
+
+STEP 2				
+
+	sudo netplan apply
+
+STEP 3 : test your connetion
+
+	ping google.com.ph
+
+---
+
+alternatively
+
+	sudo netplan generate
+	sudo netplan apply
+
+
+>
+Method #2: _`wpa_supplicant`_
+>
+wpa_supplicant is the backend used by most Linux systems to handle WPA/WPA2 Wi-Fi authentication. It connects your Wi-Fi interface to a protected wireless network using a configuration file.
+
+STEP 1
+> 
+Generate a Secure Wi-Fi Config for your wifi		
+
+	wpa_passphrase "YourSSID" "YourPassword" > wpa.conf
+
+STEP 2
+
+	sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+
+Copy the contents of wpa.conf to this file. 
+
+STEP 3 : start wpa_supplicant
+
+	sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+Replace _wlan0_ with your own wifi interface. Use ip link show to find your interface.
+
+STEP 4 : test your connetion
+
+	ping google.com.ph
+
+
+Troubleshooting
+
+- Make sure the wifi interface is up by running 
+		
+		sudo ip link set wlo1 down 
+		sudo ip link set wlo1 up.
+
+- wpa_supplicant might interfere by creating p2p-dev-wlan0 and I found it useful to kill it's instances to resolve those conflicts. 
+	
+		sudo killall wpa_supplicant.
+
+
+
