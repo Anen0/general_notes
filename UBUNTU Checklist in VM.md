@@ -1032,7 +1032,45 @@ https://www.geeksforgeeks.org/how-to-set-or-change-timezone-on-ubuntu-20-04/
 
 
 -------------------------------------------------------------------------------------------------------------------------
-## `Monitor service JOURNALCTL`
+## `Create a service`
+write your service in this location:
+	
+	cd /etc/systemd/system/ 
+
+create your service template
+
+	[Unit]
+	Description=This is a simple Flask app with logging
+	After=network.target 
+
+	[Service]
+	User=nomad			# change to User name
+	Group=www-data		# change to Group name
+
+	WorkingDirectory=/home/nomad/folder_name
+
+	# if there needs to be an environment
+	Environment="PATH=/home/nomad/ratking/env_name/bin"
+
+
+	ExecStart=/home/nomad/ratking/ratvenv/bin/gunicorn --w 5 --bind --timeout 360 wsgi:app
+
+	ExecStop=/home/jakqwelen/ashgard_merit/Backend/redis-stable/src/redis-cli -h 127.0.0.1 -p 6385 --user thraka --pass 'okokok5123hhh' shutdown
+
+
+	StandardOutput=/var/log/ratking/osint.out.log
+	StandardError=/var/log/ratking/osint.err.log
+
+	Restart=always
+	RestartSec=5
+
+
+	[Install]
+	WantedBy=multi-user.target
+
+
+
+## `Monitor a service with JOURNALCTL`
 
 To actively follow the logs as they are being written, you can use the ` -f ` flag
 
@@ -1234,19 +1272,13 @@ its contents should look like this:
 
 STEP 2				
 
-	sudo netplan apply
+	sudo netplan generate  	--->	test & validate the yaml file
+	sudo netplan apply		--->	apply the changes
 
 STEP 3 : test your connetion
 
 	ping google.com.ph
-
----
-
-alternatively
-
-	sudo netplan generate
-	sudo netplan apply
-
+	
 
 >
 Method #2: _`wpa_supplicant`_
@@ -1277,6 +1309,15 @@ STEP 4 : test your connetion
 
 
 Troubleshooting
+
+- if you get a warning like:
+
+	** (process:2494): WARNING **: 05:24:25.296: Permissions for /etc/netplan/00-installer-config.yaml are too open. Netplan configuration should NOT be accessible by others.
+>
+change the premisison of the file with:
+
+	sudo chmod 600 /etc/netplan/*.yaml
+
 
 - Make sure the wifi interface is up by running 
 		
