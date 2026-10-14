@@ -103,7 +103,83 @@ https://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 ## `Forcing a push on unrelated branches`
+	
 	git pull origin branchname --allow-unrelated-histories
+
+## `Force pull`
+source: https://www.codecademy.com/article/force-git-pull
+
+>`Option 1`:
+
+step 1
+
+	git fetch origin <branch name>
+
+This command updates our remote-tracking branches (like origin/main) without modifying our working directory or current branch. Notably, it doesn’t merge or rebase anything—it simply downloads the latest commits from the remote repository and stores them in the local repository.
+
+>step 2
+
+	git reset --hard origin/<branch name>
+>
+This command:
+- Moves the HEAD pointer and the current branch pointer to origin/main.
+- Updates the working directory to match the state of the remote branch.
+- Discards all local commits and changes that haven’t been pushed to the remote.
+
+_Note_: The git reset --hard command will permanently remove any uncommitted and unpushed changes. Make sure you either commit or back them up if needed.
+
+This approach is useful when:
+- Our local branch has diverged due to experimental changes.
+- We’re dealing with merge conflicts we don’t want to resolve.
+- We simply want to reset to the remote state and start clean.
+
+>`Option 2`:
+
+If we don’t want to lose our local changes entirely but still need to force a `git pull`, `git stash` can be useful. The `git stash` command allows us to temporarily save our local changes, apply a force `git pull`, and then reapply our stashed changes
+
+step 1
+
+	git stash
+
+This command:
+- Saves all modifications in our working directory and staging area.
+- Returns our branch to a clean state that matches the last commit.
+- Does not affect committed changes—only uncommitted ones.
+
+Step 2
+
+With our working directory clean, we can now safely pull changes from the remote branch without any risk of conflict:
+
+	git pull origin main
+
+Step 3
+
+Once the pull is complete and our local branch is updated, we can reapply the saved changes using this command:
+
+	git stash pop
+
+This command:
+    - Reapplies the most recent stash entry to our working directory.
+    - Removes the stash from the stash list after applying.
+
+If the popped changes don’t overlap with the changes from the remote pull, then everything will be fine. If it does, then it will result in a merge conflict. In that case, we need to manually resolve it before we can proceed.
+
+This approach is useful when:
+    - We’re working on local edits but need to sync with the latest changes in the remote branch.
+    - We want to avoid merge conflicts during the pull process.
+    - We’re not ready to commit our changes, but also don’t want to lose them.
+
+We’re now done covering the different methods for forcing git pull. In the next section, we’ll navigate through a list of best practices that we can apply while forcing the git pull command.
+
+`Best practices for forcing git pull`
+
+While forcing git pull can be useful, it’s important to follow these best practices to ensure we don’t accidentally lose our work:
+
+- **Commit the local changes**: Always commit the local changes before forcing `git pull`, even if we don’t plan to keep them. This gives us a backup in case we need to retrieve them later.
+- **Use git stash for safety**: If we’re not sure whether we want to discard the local changes, we can use `git stash` to save the changes before proceeding with a forced `git pull`.
+- **Understand the consequences**: Forcing a `git pull` (especially with `git reset --hard`) can overwrite local changes permanently. Hence, we need to make sure we’re okay with that before proceeding.
+- **Work in feature branches**: If we’re working on a feature, we can ideally do all our changes in a dedicated branch. This makes it easier to manage local changes without affecting the main branch.
+
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
 ## `Force a push` 
