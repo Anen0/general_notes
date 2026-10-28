@@ -28,7 +28,7 @@ for older systems
 
 5. quickly check if there is still instances of any distro with:
 
-        wslhttps://learn.microsoft.com/en-us/windows/wsl/install-manual
+        wsl --list
 
 6. import the distro from the new location:
 

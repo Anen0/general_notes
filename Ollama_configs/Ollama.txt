@@ -1,0 +1,4 @@
+on Ryzen 9 pc - office
+local Ollama  publick key:
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfQjvrUyXmG8eNWkfBXSybScuoYmvjfGMnUOV6aCbwH

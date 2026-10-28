@@ -426,7 +426,7 @@ It should store the encrypted credentials in:
 
 =====================
 
-## `Permission conflicts when running Docker`:
+## `Permission conflicts when running Docker / Run docker without SUDO`:
 _src_ : https://stackoverflow.com/questions/48568172/docker-sock-permission-denied
 
 if you forgot the user name:
@@ -439,9 +439,12 @@ on the shell
 
 needs to have `$USER` defined in your shell. This is often there by default, but you may need to set the value to your login id in some shells.
 
+
 The current user can be added like so to avoid referencing non-existent users:
 
     sudo usermod -aG docker $(whoami)
+
+
 
 Changing the groups of a user does not change existing logins, terminals, and shells that a user has open. To avoid performing a login again, you can simply run:
 
@@ -452,6 +455,35 @@ to get access to that group in your current shell.
 Once you have done this, the user effectively has root access on the server, so only do this for users that are trusted with unrestricted sudo access.
 
 _additional supporting info_ : https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+
+
+
+========
+
+## `Run docker without SUDO`:
+
+_src_: https://docs.docker.com/engine/install/linux-postinstall/
+
+Create the docker group.
+
+    sudo groupadd docker
+
+Add your user to the docker group.
+
+    sudo usermod -aG docker $USER
+
+Log out and log back in so that your group membership is re-evaluated.
+>   If you're running Linux in a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
+
+You can also run the following command to activate the changes to groups:
+
+    newgrp docker
+
+
+
+<!-- ===================== -->
+
+
 
 
 <!-- ===================== -->
